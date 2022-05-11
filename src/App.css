@@ -1,7 +1,7 @@
 .App {
-  background: linear-gradient(316deg, #20d1fd, #38b3fb, #5986fb, #7863fb, #a232fe);
+  background: linear-gradient(316deg, #77ddf7, #38b3fb, #5986fb, #7863fb, #961afc);
 	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+	animation: gradient 10s ease infinite;
 	height: 100vh;
   align-content: center;
   flex-direction: column;
@@ -31,7 +31,7 @@
   justify-content: center;
   margin: 0 auto;
   
-  font-size: 8em;
+  font-size: 7em;
   text-align: center;
   font-weight: 800;
   line-height: 1em;
@@ -54,17 +54,40 @@
   color: white;
 }
 
+.icons {
+  /* align-items: center;
+  justify-content: center;
+  margin: 0 auto; */
+
+  
+  padding: 30px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  filter: drop-shadow(0px 2px 2px rgba(0,0,0,.1));
+  font-size: 4em;
+}
+
+.icon {
+  min-width: 70px;
+  
+}
+
   @media screen and (max-width: 770px) {
     .App {
       padding: 20px;
-      height: -webkit-fill-available;
+      
 
     }
     .App-header {
-      font-size: 5em;
+      font-size: 4em;
     }
     .App-sub {
-      font-size: 1em;
+      font-size: .8em;
     }
   }
   
