@@ -25,7 +25,8 @@ function App() {
 
   return (
     <>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="theme-color" content="#5986fb"></meta> 
     <div className="App">
       <header className="App-header">
           Tomer Shmul
