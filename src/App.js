@@ -1,8 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
 import styled from 'styled-components'
+import { useEffect, useState } from 'react';
+import { useCallback } from 'react';
 
 function App() {
+
+  const names = [
+    'Software Engineer', 'Plane & Helicopter Pilot', 'Georgia Tech Student'
+  ]
+
+  const [newName, setnewName] = useState("Software Engineer");
+
+    const shuffle = useCallback(() => {
+        const index = Math.floor(Math.random() * names.length);
+        setnewName(names[index]);
+    }, []);
+
+    useEffect(() => {
+        const intervalID = setInterval(shuffle, 1500);
+        return () => clearInterval(intervalID);
+    }, [shuffle])
 
 
   return (
@@ -12,7 +30,7 @@ function App() {
           Tomer Shmul
       </header>
       <div className="App-header2">
-        Software Engineer
+        {newName}
       </div>
     </div>
   );
