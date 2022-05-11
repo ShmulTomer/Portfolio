@@ -1,18 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components'
 
 function App() {
+
+
   return (
+    
     <div className="App">
       <header className="App-header">
-        
-      <p className="font-Taja text-5xl text-white font-bold">
           Tomer Shmul
-      </p>
-        <p className="text-1xl font-Taja text-gray-500 font-bold mb-2">
-          Full Stack Developer
-      </p>
       </header>
+      <div className="App-header2">
+        Software Engineer
+      </div>
     </div>
   );
 }
