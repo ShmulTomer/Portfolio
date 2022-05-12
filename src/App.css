@@ -1,6 +1,6 @@
 .App {
-  background: linear-gradient(316deg, #77ddf7, #38b3fb, #5986fb, #7863fb, #961afc);
-	background-size: 400% 400%;
+  background: linear-gradient(316deg, #99e3f5, #38cdfb, #5986fb, #6b55fd, #9415fc);
+	background-size: 300% 300%;
 	animation: gradient 10s ease infinite;
 	height: 100vh;
   align-content: center;
@@ -21,7 +21,10 @@
 	}
 }
 
-
+.proj {
+  background-color: white;
+  height: 100vh;
+}
 
 .App-header {
   
@@ -30,6 +33,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  padding-bottom: 8px;
   
   font-size: 7em;
   text-align: center;
@@ -80,8 +84,10 @@
   @media screen and (max-width: 770px) {
     .App {
       padding: 20px;
-      
-
+    }
+    .icons {
+      font-size: 3rem;
+      padding-right: 10px;
     }
     .App-header {
       font-size: 4em;

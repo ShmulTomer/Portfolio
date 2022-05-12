@@ -1,29 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
-import styled from 'styled-components'
-import { useEffect, useState } from 'react';
-import { useCallback } from 'react';
 import {FaLinkedin, FaEnvelope, FaInstagramSquare} from 'react-icons/fa';
 import {ImMail} from 'react-icons/im'
+import Typewriter from 'typewriter-effect'
+import Projects from './Projects';
 
 
 function App() {
 
-  const names = [
-    'Software Engineer', 'Plane & Helicopter Pilot', 'Georgia Tech Student'
-  ]
-
-  const [newName, setnewName] = useState("Software Engineer");
-
-    const shuffle = useCallback(() => {
-        const index = Math.floor(Math.random() * names.length);
-        setnewName(names[index]);
-    }, []);
-
-    useEffect(() => {
-        const intervalID = setInterval(shuffle, 1500);
-        return () => clearInterval(intervalID);
-    }, [shuffle])
 
 
   return (
@@ -36,7 +20,13 @@ function App() {
           Tomer Shmul
       </header>
       <div className="App-header2">
-        {newName}
+      <Typewriter
+        options={{
+          strings: ['Georgia Tech Student', 'Software Engineer', 'Plane & Helicopter Pilot'],
+          autoStart: true,
+          loop: true,
+        }}
+      />
       </div>
       <div className="icons">
         <a className="icon" href="google.com">
@@ -51,6 +41,7 @@ function App() {
       </div>
       
     </div>
+    <Projects />
     </>
   );
 }
