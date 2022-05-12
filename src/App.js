@@ -1,13 +1,18 @@
 
 import './App.css';
-import {FaLinkedin, FaEnvelope, FaInstagramSquare} from 'react-icons/fa';
+import {FaLinkedin, FaAngleDown, FaInstagramSquare} from 'react-icons/fa';
 import {ImMail} from 'react-icons/im'
 import Typewriter from 'typewriter-effect'
 import Projects from './Projects';
+import { useRef } from 'react';
 
 
 function App() {
 
+  const testRef = useRef(null);
+  const scrollToElement = () => testRef.current.scrollIntoView({
+    behavior: "smooth",
+  });
 
 
   return (
@@ -29,19 +34,30 @@ function App() {
       />
       </div>
       <div className="icons">
-        <a className="icon" href="google.com">
+        <a className="icon" href="https://www.linkedin.com/in/tomer-shmul/">
             <FaLinkedin />
         </a>
-        <a className="icon" href="google.com">
+        <a className="icon" href="mailto:tshmul@gatech.edu?subject=Hey%20Tomer!">
             <ImMail />
         </a>
-        <a className="icon" href="google.com">
+        <a className="icon" href="https://www.instagram.com/tomershmul/">
             <FaInstagramSquare />
         </a>
+        
+       
+      </div>
+      <div className="arrow">
+        <button onClick={scrollToElement}>
+          <FaAngleDown />
+        </button>
+
       </div>
       
+      
     </div>
-    <Projects />
+    <div className="proj" ref={testRef}>
+      <Projects />
+    </div>
     </>
   );
 }
