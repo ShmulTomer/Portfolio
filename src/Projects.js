@@ -39,7 +39,7 @@ const Projects = () => {
                     <CardMedia
                         component="img"
                         height="140"
-                        image="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
+                        image="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640"
                         alt="green iguana"
                         />
                     <CardContent>
@@ -58,7 +58,7 @@ const Projects = () => {
                     <CardMedia
                         component="img"
                         height="140"
-                        image="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
+                        image="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640"
                         alt="green iguana"
                         />
                     <CardContent>
@@ -77,7 +77,7 @@ const Projects = () => {
                     <CardMedia
                         component="img"
                         height="140"
-                        image="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
+                        image="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640"
                         alt="green iguana"
                         />
                     <CardContent>
