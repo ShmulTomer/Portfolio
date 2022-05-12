@@ -80,7 +80,7 @@
   position: absolute;
   bottom: 20px;
   left: 50%;
-  margin-left: -30px;
+  margin-left: -39px;
   
 
   color: white;
@@ -100,6 +100,9 @@
     .icons {
       font-size: 3rem;
       padding-right: 10px;
+    }
+    .arrow {
+      margin-left: -39px;
     }
     .App-header {
       font-size: 4em;
