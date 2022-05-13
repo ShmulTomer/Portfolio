@@ -5,6 +5,7 @@ import {ImMail} from 'react-icons/im'
 import Typewriter from 'typewriter-effect'
 import Projects from './Projects';
 import { useRef } from 'react';
+import ScrollUpButton from 'react-scroll-up-button';
 
 
 function App() {
@@ -58,6 +59,16 @@ function App() {
     <div className="proj" ref={testRef}>
       <Projects />
     </div>
+    <ScrollUpButton
+      StopPosition={0}
+      ShowAtPosition={150}
+      EasingType='easeOutCubic'
+      AnimationDuration={500}
+      ContainerClassName='ScrollUpButton__Container'
+      TransitionClassName='ScrollUpButton__Toggled'
+      style={{}}
+      ToggledStyle={{}}
+    />
     </>
   );
 }
