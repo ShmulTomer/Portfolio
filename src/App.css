@@ -97,6 +97,11 @@
 
 .icon {
   min-width: 70px; 
+  transition: all .2s ease-in-out; 
+}
+
+.icon:hover {
+  transform: scale(1.1);
 }
 
 .cards {
