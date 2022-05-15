@@ -6,6 +6,9 @@ import Typewriter from 'typewriter-effect'
 import Projects from './Projects';
 import { useRef } from 'react';
 import ScrollUpButton from 'react-scroll-up-button';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-300CPG4KSC');
 
 
 function App() {
