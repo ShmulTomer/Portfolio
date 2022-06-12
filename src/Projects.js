@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
 
-
 const Projects = () => {
   return (
     <div className="proj">
