@@ -64,7 +64,7 @@ const Projects = () => {
                         <CardMedia
                             component="img"
                             height="140"
-                            image="https://i.ibb.co/qkVKByh/Drive-Way-Web-Image-1400x1000.jpg"
+                            image="https://i.ibb.co/55Tzvyb/Drive-Way-PNGV.png"
                             alt="driveway prototype image"
                             />
                         <CardContent>
