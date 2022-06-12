@@ -27,7 +27,7 @@ const Projects = () => {
                             component="img"
                             height="100"
                             image="https://i.ibb.co/yRJLq0M/GT-Complaint-MUP.jpg"
-                            alt="project image"
+                            alt="gt complaint image"
                             />
                         <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
@@ -44,9 +44,9 @@ const Projects = () => {
                     <CardActionArea>
                         <CardMedia
                             component="img"
-                            height="140"
-                            image="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640"
-                            alt="green iguana"
+                            height="400"
+                            image="https://i.ibb.co/c21V119/Website-Pic-1400x1000.jpg"
+                            alt="hive defense image"
                             />
                         <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
@@ -64,12 +64,12 @@ const Projects = () => {
                         <CardMedia
                             component="img"
                             height="140"
-                            image="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640"
-                            alt="green iguana"
+                            image="https://i.ibb.co/qkVKByh/Drive-Way-Web-Image-1400x1000.jpg"
+                            alt="driveway prototype image"
                             />
                         <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                            DriveSafe Prototype
+                            DriveWay Prototype
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                             Lizards are a widespread group of squamate reptiles, with over 6,000
