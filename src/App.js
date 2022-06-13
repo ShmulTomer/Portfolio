@@ -33,6 +33,7 @@ function App() {
           loop: true,
           delay: 64,
           deleteSpeed: 50,
+          pauseFor: 70,
         }}
       />
       </div>
