@@ -1,12 +1,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Raleway:wght@800&display=swap');
 
 
 .App {
-  /*background: linear-gradient(316deg, #99e3f5, #38cdfb, #5986fb, #6b55fd, #9415fc);*/
-  background: linear-gradient(316deg, #f53844, #3c4fb8);
-	background-size: 300% 300%;
+  /*
+  Original:
+  background: linear-gradient(316deg, #99e3f5, #38cdfb, #5986fb, #6b55fd, #9415fc);
+  
+  Deep:
+  background: linear-gradient(316deg, #191654, #43c6ac);
+
+  Dark:
+  background: linear-gradient(316deg, #0f0c29, #302b63);
+
+
+  */
+  background: linear-gradient(316deg, #191654, #43c6ac);
+	background-size: 200% 200%;
 	animation: gradient 10s ease infinite;
 	height: 100vh;
   align-content: center;
@@ -42,10 +54,10 @@
   justify-content: center;
   margin: 0 auto;
   padding-bottom: 8px;
-  font-family: Raleway;
+  font-family: Inter;
   font-size: 7em;
   text-align: center;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1em;
   text-shadow: rgb(0 0 0 / 20%) 0 5px 5px;
   color: white;
@@ -57,7 +69,8 @@
   margin: 0 auto;
   font-size: 1.8em;
   text-align: center;
-  font-weight: 300;
+  font-weight: 200;
+  font-family: Inter;
   line-height: .8em;
   text-shadow: rgb(0 0 0 / 20%) 0 2px 3px;
   color: white;
@@ -88,6 +101,7 @@
 .icon {
   min-width: 70px; 
   transition: all .2s ease-in-out; 
+  margin: 10px;
 }
 
 .icon:hover {
@@ -99,7 +113,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
   margin: 20px;
   margin-bottom: 60px;
   max-width: 750px;
@@ -113,8 +127,8 @@
 }
 
 .title {
-  padding: 20px;
-  padding-bottom: 15px;
+  padding: 30px;
+  padding-bottom: 25px;
   font-family: Bungee Shade;
   font-size: 4rem;
   font-weight: 400;
@@ -165,6 +179,11 @@
       font-size: 3rem;
       padding-right: 10px;
     }
+
+    .icon {
+      margin: 0px;
+    }
+
     .arrow {
       margin-left: -39px;
     }

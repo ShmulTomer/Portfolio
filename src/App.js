@@ -1,7 +1,6 @@
 
 import './App.css';
-import {FaLinkedin, FaAngleDown, FaInstagramSquare} from 'react-icons/fa';
-import {ImMail} from 'react-icons/im'
+import {FaLinkedin, FaAngleDown, FaInstagramSquare, FaEnvelopeSquare} from 'react-icons/fa';
 import Typewriter from 'typewriter-effect'
 import Projects from './Projects';
 import { useRef } from 'react';
@@ -32,6 +31,8 @@ function App() {
           strings: ['Georgia Tech Student', 'Software Engineer', 'Plane & Helicopter Pilot'],
           autoStart: true,
           loop: true,
+          delay: 64,
+          deleteSpeed: 50,
         }}
       />
       </div>
@@ -40,21 +41,18 @@ function App() {
             <FaLinkedin />
         </a>
         <a className="icon" href="mailto:tshmul@gatech.edu?subject=Hey%20Tomer!">
-            <ImMail />
+            <FaEnvelopeSquare />
         </a>
         <a className="icon" href="https://www.instagram.com/tomershmul/">
             <FaInstagramSquare />
         </a>
-        
-       
       </div>
+
       <div className="arrow">
         <button onClick={scrollToElement}>
           <FaAngleDown />
         </button>
-
       </div>
-      
       
     </div>
     <div className="proj" ref={testRef}>

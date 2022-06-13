@@ -5,9 +5,31 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
+import amber from "@mui/material/colors"
 
 
 const Projects = () => {
+
+
+  const theme = createTheme({
+    typography: {
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },
+  });
+
   return (
     <div className="proj">
         
@@ -29,6 +51,7 @@ const Projects = () => {
                             alt="gt complaint image"
                             />
                         <CardContent>
+                            <ThemeProvider theme={theme}>
                         <Typography gutterBottom variant="h5" component="div">
                             GT Complaint Website
                         </Typography>
@@ -36,6 +59,7 @@ const Projects = () => {
                             I created a website that allows users to create accounts using their school email,
                             submit complaints, respond to other complaints, and resolve when they are addressed.
                         </Typography>
+                        </ThemeProvider>
                         </CardContent>
                     </CardActionArea>
                 </Card>
@@ -48,6 +72,7 @@ const Projects = () => {
                             alt="hive defense image"
                             />
                         <CardContent>
+                        <ThemeProvider theme={theme}>
                         <Typography gutterBottom variant="h5" component="div">
                             Hive Defense Game
                         </Typography>
@@ -55,6 +80,7 @@ const Projects = () => {
                             An Android game where you can place defending towers around a path where different enemies will 
                             try to approach and destroy the hive at the end. Towers can be upgraded, which is needed to defeat the final boss.
                         </Typography>
+                        </ThemeProvider>
                         </CardContent>
                     </CardActionArea>
                 </Card>
@@ -67,12 +93,14 @@ const Projects = () => {
                             alt="driveway prototype image"
                             />
                         <CardContent>
+                        <ThemeProvider theme={theme}>
                         <Typography gutterBottom variant="h5" component="div">
                             DriveWay Prototype
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
                         </Typography>
+                        </ThemeProvider>
                         </CardContent>
                     </CardActionArea>
                 </Card>
@@ -85,12 +113,14 @@ const Projects = () => {
                             alt="green iguana"
                             />
                         <CardContent>
+                        <ThemeProvider theme={theme}>
                         <Typography gutterBottom variant="h5" component="div">
                             Meal Planner App
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
                         </Typography>
+                        </ThemeProvider>
                         </CardContent>
                     </CardActionArea>
                 </Card>
