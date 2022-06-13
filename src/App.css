@@ -114,6 +114,7 @@
 
 .title {
   padding: 20px;
+  padding-bottom: 15px;
   font-family: Bungee Shade;
   font-size: 4rem;
   font-weight: 400;
@@ -122,7 +123,7 @@
   text-shadow: red -2px 0, cyan 2px 0;
   text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
     0.025em 0.04em 0 #fffc00;
-  animation: glitch 725ms infinite;
+  animation: glitch 1.5s infinite;
 }
 
 .title span {
@@ -132,14 +133,14 @@
 }
 
 .title span:first-child {
-  animation: glitch 500ms infinite;
+  animation: glitch 1s infinite;
   clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
   transform: translate(-0.04em, -0.03em);
   opacity: 0.75;
 }
 
 .title span:last-child {
-  animation: glitch 375ms infinite;
+  animation: glitch 1s infinite;
   clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
   transform: translate(0.04em, 0.03em);
   opacity: 0.75;
