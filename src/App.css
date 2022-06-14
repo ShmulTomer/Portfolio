@@ -20,11 +20,6 @@
   Blue:
   background: linear-gradient(316deg, #5433FF, #20BDFF, #A5FECB);
 
-
-
-
-
-
   */
   background: linear-gradient(316deg, #191654, #43c6ac);
 	background-size: 300% 300%;
@@ -105,17 +100,63 @@
   color: white;
   filter: drop-shadow(0px 2px 2px rgba(0,0,0,.1));
   font-size: 5em;
+  transition: all .2s ease-in-out; 
+
+  transform: scale(0.8);
+  opacity: 0;
+  filter: blur(4px);
+  animation: fade-in 0.8s 1.5s forwards cubic-bezier(.11,0,.55,.55), scale 3s 1.5s forwards cubic-bezier(.23,.19,.22,.94), updown 5s 5s ease-in-out infinite;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(30%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+
+}
+
+.arrow:hover {
+  transform: scale(1.2);
 }
 
 .icon {
   min-width: 70px; 
   transition: all .2s ease-in-out; 
   margin: 10px;
+  transform: scale(0.8);
+  
+  opacity: 0;
+  filter: blur(4px);
+  animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0), scale 3s 0.7s forwards cubic-bezier(0.5, 1, 0.89, 1);;
+}
+
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 
 .icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
+
+
 
 .cards {
   display: inline-flex;
@@ -128,12 +169,21 @@
   max-width: 750px;
 }
 
+.card {
+  transition: all .2s ease-in-out; 
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
 .content {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 
 .title {
   padding: 30px;
@@ -144,8 +194,7 @@
   color: white;
   filter: drop-shadow(0px 8px 8px rgba(247, 244, 244, 0.137));
   text-shadow: red -2px 0, cyan 2px 0;
-  text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
-    0.025em 0.04em 0 #fffc00;
+  text-shadow: 0.05em 0 0 #00fffc;
   animation: glitch 1.5s infinite;
 }
 
@@ -171,12 +220,13 @@
 
 @keyframes glitch {
   0% {
-    text-shadow: 0.05em 0 0 #00fffc, -0.01em -0.02em 0 #fc00ff,
-      0.025em 0.04em 0 #fffc00;
+    text-shadow: 0.05em 0 0 #00fffc;
   }
   50% {
-    text-shadow: 0.05em 0.035em 0 #00fffc, 0.01em 0 0 #fc00ff,
-      0 -0.02em 0 #fffc00;
+    text-shadow: 0.05em 0.035em 0 #00fffc;
+  }
+  100% {
+    
   }
 }
 

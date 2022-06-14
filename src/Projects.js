@@ -49,6 +49,8 @@ const Projects = () => {
             </div>
             <div className="cards">
                 <ThemeProvider theme={siz}>
+
+                <div className="card">
                 <Card sx={{ maxWidth: {
                     sm: 300,
                     lg: 345
@@ -73,7 +75,9 @@ const Projects = () => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
+                </div>
 
+                <div className="card">
                 <Card sx={{ maxWidth: {
                     sm: 300,
                     lg: 345
@@ -98,6 +102,9 @@ const Projects = () => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
+                </div>
+
+                <div className="card">
                 <Card sx={{ maxWidth: {
                     sm: 300,
                     lg: 345
@@ -121,6 +128,9 @@ const Projects = () => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
+                </div>
+
+                <div className="card">
                 <Card sx={{ maxWidth: {
                     sm: 300,
                     lg: 345
@@ -144,6 +154,7 @@ const Projects = () => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
+                </div>
 
                 </ThemeProvider>
             </div>
