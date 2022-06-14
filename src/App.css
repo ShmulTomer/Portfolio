@@ -15,10 +15,19 @@
   Dark:
   background: linear-gradient(316deg, #0f0c29, #302b63);
 
+  background: linear-gradient(316deg, #2b5876, #4e4376);
+
+  Blue:
+  background: linear-gradient(316deg, #5433FF, #20BDFF, #A5FECB);
+
+
+
+
+
 
   */
   background: linear-gradient(316deg, #191654, #43c6ac);
-	background-size: 200% 200%;
+	background-size: 300% 300%;
 	animation: gradient 10s ease infinite;
 	height: 100vh;
   align-content: center;

@@ -7,11 +7,8 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
-import amber from "@mui/material/colors"
-
 
 const Projects = () => {
-
 
   const theme = createTheme({
     typography: {
@@ -30,6 +27,15 @@ const Projects = () => {
     },
   });
 
+  const siz = createTheme({
+    breakpoints: {
+      values: {
+        sm: 0,
+        lg: 770
+      }
+    }
+  });
+
   return (
     <div className="proj">
         
@@ -42,7 +48,11 @@ const Projects = () => {
                 PROJECTS
             </div>
             <div className="cards">
-                <Card sx={{ maxWidth: 345 }}>
+                <ThemeProvider theme={siz}>
+                <Card sx={{ maxWidth: {
+                    sm: 300,
+                    lg: 345
+                } }}>
                     <CardActionArea href="https://www.gtcomplaint.com/" target="_blank">
                         <CardMedia
                             component="img"
@@ -63,7 +73,11 @@ const Projects = () => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
-                <Card sx={{ maxWidth: 345 }}>
+
+                <Card sx={{ maxWidth: {
+                    sm: 300,
+                    lg: 345
+                } }}>
                     <CardActionArea>
                         <CardMedia
                             component="img"
@@ -84,7 +98,10 @@ const Projects = () => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
-                <Card sx={{ maxWidth: 345 }}>
+                <Card sx={{ maxWidth: {
+                    sm: 300,
+                    lg: 345
+                } }}>
                     <CardActionArea>
                         <CardMedia
                             component="img"
@@ -104,7 +121,10 @@ const Projects = () => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
-                <Card sx={{ maxWidth: 345 }}>
+                <Card sx={{ maxWidth: {
+                    sm: 300,
+                    lg: 345
+                } }}>
                     <CardActionArea>
                         <CardMedia
                             component="img"
@@ -124,6 +144,8 @@ const Projects = () => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
+
+                </ThemeProvider>
             </div>
         </div>
     </div>
