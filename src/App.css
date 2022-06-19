@@ -29,6 +29,15 @@
   flex-direction: column;
   justify-content: center;
   display: flex;
+
+  /* padding-bottom: 30px;
+  clip-path:
+    polygon(
+      0% 0%,
+      100% 0%,
+      100% calc(100% - 30px),
+      0% 100%
+    ); */
 }
 
 @keyframes gradient {
@@ -45,12 +54,14 @@
 
 .proj {
   background-color: #202020;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #0f0b09 100%);
   overflow: hidden;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  
 }
 
 .App-header {
@@ -131,15 +142,17 @@
   min-width: 70px; 
   transition: all .2s ease-in-out; 
   margin: 10px;
-  transform: scale(0.8);
+  transform: scale(1);
   
   opacity: 0;
   filter: blur(4px);
-  animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0), scale 3s 0.7s forwards cubic-bezier(0.5, 1, 0.89, 1);;
+  animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0), scale 3s 0.7s none cubic-bezier(0.5, 1, 0.89, 1);;
 }
 
-
 @keyframes scale {
+  0% {
+    transform: scale(0.8);
+  }
   100% {
     transform: scale(1);
   }
@@ -153,10 +166,8 @@
 }
 
 .icon:hover {
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
-
-
 
 .cards {
   display: inline-flex;
@@ -171,6 +182,7 @@
 
 .card {
   transition: all .2s ease-in-out; 
+  
 }
 
 .card:hover {
