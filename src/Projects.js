@@ -54,7 +54,7 @@ const Projects = () => {
                 <Card sx={{ maxWidth: {
                     sm: 300,
                     lg: 345},
-                    minHeight: '50vw'
+                    minHeight: '430px'
                 }}>
                     <CardActionArea href="https://www.gtcomplaint.com/" target="_blank">
                         <CardMedia
@@ -82,7 +82,7 @@ const Projects = () => {
                 <Card sx={{ maxWidth: {
                     sm: 300,
                     lg: 345},
-                    minHeight: '50vw'
+                    minHeight: '430px'
                 }}>
                     <CardActionArea>
                         <CardMedia
