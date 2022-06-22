@@ -69,8 +69,7 @@ const Projects = () => {
                             GT Complaint Website
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            I created a website that allows users to create accounts using their school email,
-                            submit complaints, respond to other complaints, and resolve when they are addressed.
+                        Website that allows users to create accounts, submit complaints, reply and vote on others, and resolve when their complaint is solved. Built using React, Supabase DB, and hosted through AWS
                         </Typography>
                         </ThemeProvider>
                         </CardContent>
@@ -97,8 +96,7 @@ const Projects = () => {
                             Hive Defense Game
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            An Android game where you can place defending towers around a path where different enemies will 
-                            try to approach and destroy the hive at the end. Towers can be upgraded, which is needed to defeat the final boss.
+                        Android game where players place and upgrade defending or supporting towers around a path to protect against waves of enemies and a final boss. Game ends when hive loses all health. Built in Android Studio, used Agile for sprints
                         </Typography>
                         </ThemeProvider>
                         </CardContent>
