@@ -56,12 +56,12 @@ const Projects = () => {
                     lg: 345},
                     minHeight: '430px'
                 }}>
-                    <CardActionArea href="https://www.gtcomplaint.com/" target="_blank">
+                    <CardActionArea href="https://www.talkgt.com/" target="_blank">
                         <CardMedia
                             component="img"
                             height="100"
                             image="https://i.ibb.co/yRJLq0M/GT-Complaint-MUP.jpg"
-                            alt="gt complaint image"
+                            alt="talk gt image"
                             />
                         <CardContent>
                             <ThemeProvider theme={theme}>
