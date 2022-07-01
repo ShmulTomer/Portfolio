@@ -66,10 +66,10 @@ const Projects = () => {
                         <CardContent>
                             <ThemeProvider theme={theme}>
                         <Typography gutterBottom variant="h5" component="div">
-                            GT Complaint Website
+                            Talk GT Website
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                        Website that allows users to create accounts, submit complaints, reply and vote on others, and resolve when their complaint is solved. Built using React, Supabase DB, and hosted through AWS
+                        Website that allows users to create accounts, submit posts, reply and vote on others, and resolve threads on request. Built using React, Supabase DB, and hosted through AWS
                         </Typography>
                         </ThemeProvider>
                         </CardContent>
