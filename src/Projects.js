@@ -9,12 +9,12 @@ import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 
 const Projects = () => {
+  const font = "'Rubik', sans-serif";
+
   const theme = createTheme({
     typography: {
       fontFamily: [
-        "-apple-system",
-        "BlinkMacSystemFont",
-        '"Segoe UI"',
+        font,
         "Roboto",
         '"Helvetica Neue"',
         "Arial",
