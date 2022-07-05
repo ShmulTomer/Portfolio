@@ -70,7 +70,7 @@ const Projects = () => {
                       <Typography variant="body2" color="text.secondary">
                         Website that allows users to create accounts, submit
                         posts, reply and vote on others, and resolve threads on
-                        request. Built using React, Supabase DB, and hosted
+                        request. Built using React JS, Supabase DB, and hosted
                         through AWS
                       </Typography>
                     </ThemeProvider>
@@ -136,11 +136,8 @@ const Projects = () => {
                         DriveWay Prototype
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat
+                      Conducted market research on distracted driving through 20+ interviews with experts and analysis of present solutions. Designed a dashboard smart phone mount through 3D model and Figma prototype of mobile app
+
                       </Typography>
                     </ThemeProvider>
                   </CardContent>
@@ -161,8 +158,8 @@ const Projects = () => {
                   <CardMedia
                     component="img"
                     height="140"
-                    image="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640"
-                    alt="green iguana"
+                    image="https://i.ibb.co/xGyvGKp/Screen-Shot-2022-07-05-at-6-10-13-PM.png"
+                    alt="meal planner image"
                   />
                   <CardContent>
                     <ThemeProvider theme={theme}>
@@ -170,11 +167,9 @@ const Projects = () => {
                         Meal Planner App
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat
+                        - In Progress -
+                        <br></br>
+                        Website that supports contributors, which create recipes and write reviews, and home chefs, which source meals through grocery runs and create meals through the products they own and recipes. Backed by MySQL database and React JS frontend
                       </Typography>
                     </ThemeProvider>
                   </CardContent>
