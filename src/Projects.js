@@ -158,7 +158,7 @@ const Projects = () => {
                   <CardMedia
                     component="img"
                     height="140"
-                    image="https://i.ibb.co/xGyvGKp/Screen-Shot-2022-07-05-at-6-10-13-PM.png"
+                    image="https://i.ibb.co/H4WL6KP/Meal-Planner-IMG.jpg"
                     alt="meal planner image"
                   />
                   <CardContent>
