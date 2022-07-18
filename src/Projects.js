@@ -1,12 +1,16 @@
 import React from "react";
 import "./App.css";
 import Card from "@mui/material/Card";
+import {
+  FaDownload
+} from "react-icons/fa";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
+import PDF from "./Tomer-Shmul-Resume.pdf"
 
 const Projects = () => {
   const font = "'Rubik', sans-serif";
@@ -127,7 +131,7 @@ const Projects = () => {
                   <CardMedia
                     component="img"
                     height="140"
-                    image="https://i.ibb.co/55Tzvyb/Drive-Way-PNGV.png"
+                    image="https://i.ibb.co/ByhF2tB/Drive-Way-Web-Image-1047x798.jpg"
                     alt="driveway prototype image"
                   />
                   <CardContent>
@@ -136,7 +140,7 @@ const Projects = () => {
                         DriveWay Prototype
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                      Conducted market research on distracted driving through 20+ interviews with experts and analysis of present solutions. Designed a dashboard smart phone mount through 3D model and Figma prototype of mobile app
+                      Conducted market research on distracted driving through 20+ interviews with experts and analysis of present solutions. Designed a dashboard smart phone mount through 3D model and Figma prototype of mobile app. Pitched product to professors, winning top 5 out of 20 teams
 
                       </Typography>
                     </ThemeProvider>
@@ -177,6 +181,10 @@ const Projects = () => {
               </Card>
             </div>
           </ThemeProvider>
+          <a href={PDF} target="_blank">
+          <div className="resume">
+               <FaDownload></FaDownload>Download Resume
+          </div></a>
         </div>
       </div>
     </div>
