@@ -181,7 +181,7 @@ const Projects = () => {
               </Card>
             </div>
           </ThemeProvider>
-          <a href={PDF} target="_blank">
+          <a href={PDF} download="Tomer-Shmul-Resume">
           <div className="resume">
                <FaDownload></FaDownload>Download Resume
           </div></a>
