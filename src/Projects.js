@@ -93,7 +93,7 @@ const Projects = () => {
                   minHeight: "430px",
                 }}
               >
-                <CardActionArea>
+                <CardActionArea href="https://github.gatech.edu/Tower-Jackets/TowerDefense" target="_blank">
                   <CardMedia
                     component="img"
                     height="400"
@@ -126,8 +126,8 @@ const Projects = () => {
                     lg: 345,
                   },
                 }}
-              >
-                <CardActionArea>
+              > 
+                <CardActionArea href="https://drive.google.com/file/d/1-Y2mvSFgJndwJv7-wK5FUIJ07K0udZHo/view?usp=sharing" target="_blank">
                   <CardMedia
                     component="img"
                     height="140"
@@ -142,6 +142,37 @@ const Projects = () => {
                       <Typography variant="body2" color="text.secondary">
                       Conducted market research on distracted driving through 20+ interviews with experts and analysis of present solutions. Designed a dashboard smart phone mount through 3D model and Figma prototype of mobile app. Pitched product to professors, winning top 5 out of 20 teams
 
+                      </Typography>
+                    </ThemeProvider>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </div>
+
+            <div className="card">
+              <Card
+                sx={{
+                  maxWidth: {
+                    sm: 300,
+                    lg: 345,
+                  },
+                }}
+              >
+                <CardActionArea href="https://drive.google.com/drive/folders/1HOu6kWE9X-zFD3FvdBqjHPRHMX0AhQDU?usp=sharing" target="_blank">
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image="https://i.ibb.co/fC0Fq7x/BCNPNG-2-1.png"
+                    alt="barcelona metro kiosk image"
+                  />
+                  <CardContent>
+                    <ThemeProvider theme={theme}>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Metro Kiosk UI
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+    
+                      Surveyed, interviews, and observed users of the Barcelona metro kiosk and designed a new zone selection interaction for the metro system. Created low-fidelity design through paper prototype and tested based on usability heuristics; working on high fidelity prototype through Figma
                       </Typography>
                     </ThemeProvider>
                   </CardContent>
@@ -181,11 +212,13 @@ const Projects = () => {
               </Card>
             </div>
           </ThemeProvider>
-          <a href="https://drive.google.com/file/d/1AZ0YkMx2IDIDNz9gIyMdGfAnU3kr_vyF/view?usp=sharing" target="_blank">
+          
+        </div>
+        <a href="https://drive.google.com/file/d/1AZ0YkMx2IDIDNz9gIyMdGfAnU3kr_vyF/view?usp=sharing" target="_blank">
           <div className="resume">
                <FaDownload></FaDownload>Download Resume
           </div></a>
-        </div>
+          <br></br>
       </div>
     </div>
   );
