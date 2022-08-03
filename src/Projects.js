@@ -149,7 +149,7 @@ const Projects = () => {
               </Card>
             </div>
 
-            <div className="card">
+            {/* <div className="card">
               <Card
                 sx={{
                   maxWidth: {
@@ -178,7 +178,7 @@ const Projects = () => {
                   </CardContent>
                 </CardActionArea>
               </Card>
-            </div>
+            </div> */}
 
             <div className="card">
               <Card
