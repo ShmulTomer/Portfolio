@@ -214,10 +214,10 @@ const Projects = () => {
           </ThemeProvider>
           
         </div>
-        <a href="https://drive.google.com/file/d/1AZ0YkMx2IDIDNz9gIyMdGfAnU3kr_vyF/view?usp=sharing" target="_blank">
+        {/* <a href="https://drive.google.com/file/d/1AZ0YkMx2IDIDNz9gIyMdGfAnU3kr_vyF/view?usp=sharing" target="_blank">
           <div className="resume">
                <FaDownload></FaDownload>Download Resume
-          </div></a>
+          </div></a> */}
           <br></br>
       </div>
     </div>
