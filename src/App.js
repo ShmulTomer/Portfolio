@@ -4,6 +4,7 @@ import {
   FaAngleDown,
   FaInstagramSquare,
   FaEnvelopeSquare,
+  FaGithubSquare
 } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
 import Projects from "./Projects";
@@ -50,8 +51,8 @@ function App() {
           >
             <FaEnvelopeSquare />
           </a>
-          <a className="icon" href="https://www.instagram.com/tomershmul/">
-            <FaInstagramSquare />
+          <a className="icon" href="https://github.com/ShmulTomer/">
+            <FaGithubSquare />
           </a>
         </div>
 

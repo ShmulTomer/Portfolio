@@ -93,7 +93,7 @@ const Projects = () => {
                   minHeight: "430px",
                 }}
               >
-                <CardActionArea href="https://github.gatech.edu/Tower-Jackets/TowerDefense" target="_blank">
+                <CardActionArea href="https://github.com/ShmulTomer/TowerDefense" target="_blank">
                   <CardMedia
                     component="img"
                     height="400"
