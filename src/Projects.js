@@ -189,22 +189,20 @@ const Projects = () => {
                   },
                 }}
               >
-                <CardActionArea>
+                <CardActionArea href="https://github.com/GTBitsOfGood/helping-mamas" target="_blank">
                   <CardMedia
                     component="img"
                     height="140"
-                    image="https://i.ibb.co/H4WL6KP/Meal-Planner-IMG.jpg"
-                    alt="meal planner image"
+                    image="https://i.ibb.co/mc8XpC5/Helping-Mamas-SS.png"
+                    alt="helping mamas image"
                   />
                   <CardContent>
                     <ThemeProvider theme={theme}>
                       <Typography gutterBottom variant="h5" component="div">
-                        Meal Planner App
+                        Helping Mamas Web App
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        - In Progress -
-                        <br></br>
-                        Website that supports contributors, which create recipes and write reviews, and home chefs, which source meals through grocery runs and create meals through the products they own and recipes. Backed by MySQL database and React JS frontend
+                        Developing a website to manage events, volunteers, applications, and more for Helping Mamas, a non-profit organization dedicated to providing mothers with supplies for their babies. Backed by React, Node, and MongoDB. Project to be handed off to organization end of semester
                       </Typography>
                     </ThemeProvider>
                   </CardContent>
