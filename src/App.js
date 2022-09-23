@@ -30,6 +30,7 @@ function App() {
             options={{
               strings: [
                 "Georgia Tech Student",
+                "Data Structures & Algorithms TA",
                 "Software Engineer",
                 "Plane & Helicopter Pilot",
               ],
