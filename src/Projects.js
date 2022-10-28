@@ -149,36 +149,7 @@ const Projects = () => {
               </Card>
             </div>
 
-            {/* <div className="card">
-              <Card
-                sx={{
-                  maxWidth: {
-                    sm: 300,
-                    lg: 345,
-                  },
-                }}
-              >
-                <CardActionArea href="https://drive.google.com/drive/folders/1HOu6kWE9X-zFD3FvdBqjHPRHMX0AhQDU?usp=sharing" target="_blank">
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image="https://i.ibb.co/fC0Fq7x/BCNPNG-2-1.png"
-                    alt="barcelona metro kiosk image"
-                  />
-                  <CardContent>
-                    <ThemeProvider theme={theme}>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Metro Kiosk UI
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-    
-                      Surveyed, interviews, and observed users of the Barcelona metro kiosk and designed a new zone selection interaction for the metro system. Created low-fidelity design through paper prototype and tested based on usability heuristics; working on high fidelity prototype through Figma
-                      </Typography>
-                    </ThemeProvider>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </div> */}
+            
 
             <div className="card">
               <Card
@@ -209,7 +180,72 @@ const Projects = () => {
                 </CardActionArea>
               </Card>
             </div>
+
+            <div className="card">
+              <Card
+                sx={{
+                  maxWidth: {
+                    sm: 300,
+                    lg: 345,
+                  },
+                }}
+              >
+                <CardActionArea href="https://drive.google.com/drive/folders/1HOu6kWE9X-zFD3FvdBqjHPRHMX0AhQDU?usp=sharing" target="_blank">
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image="https://i.ibb.co/fC0Fq7x/BCNPNG-2-1.png"
+                    alt="barcelona metro kiosk image"
+                  />
+                  <CardContent>
+                    <ThemeProvider theme={theme}>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Metro Kiosk UI
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+    
+                      Surveyed, interviews, and observed users of the Barcelona metro kiosk and designed a new zone selection interaction for the metro system. Created low-fidelity design through paper prototype and tested based on usability heuristics; working on high fidelity prototype through Figma
+                      </Typography>
+                    </ThemeProvider>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </div>
+
+            <div className="card">
+              <Card
+                sx={{
+                  maxWidth: {
+                    sm: 300,
+                    lg: 345,
+                  },
+                }}
+              >
+                <CardActionArea href="https://devpost.com/software/stockify-i9n674" target="_blank">
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image="https://i.ibb.co/93JmJWz/Stockify.png"
+                    alt="stockify"
+                  />
+                  <CardContent>
+                    <ThemeProvider theme={theme}>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Stockify Portfolio Optimizer
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Built a stock market beginner-friendly portfolio creation tool for the HackGT hackathon. Application uses mean-variance optimization algorithm to determine investment with low risk based on past market volatility.
+                        Backed using React Native front-end, Flask, and Python libraries 
+                      
+                      </Typography>
+                    </ThemeProvider>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </div>
+
           </ThemeProvider>
+          
           
         </div>
         {/* <a href="https://drive.google.com/file/d/1AZ0YkMx2IDIDNz9gIyMdGfAnU3kr_vyF/view?usp=sharing" target="_blank">
