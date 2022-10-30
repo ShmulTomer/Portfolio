@@ -151,36 +151,7 @@ const Projects = () => {
 
             
 
-            <div className="card">
-              <Card
-                sx={{
-                  maxWidth: {
-                    sm: 300,
-                    lg: 345,
-                  },
-                }}
-              >
-                <CardActionArea href="https://github.com/GTBitsOfGood/helping-mamas" target="_blank">
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image="https://i.ibb.co/mc8XpC5/Helping-Mamas-SS.png"
-                    alt="helping mamas image"
-                  />
-                  <CardContent>
-                    <ThemeProvider theme={theme}>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Helping Mamas Web App
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Developing a website to manage events, volunteers, applications, and more for Helping Mamas, a non-profit organization dedicated to providing mothers with supplies for their babies. Backed by React, Node, and MongoDB. Project to be handed off to organization end of semester
-                      </Typography>
-                    </ThemeProvider>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </div>
-
+            
             <div className="card">
               <Card
                 sx={{
@@ -211,6 +182,36 @@ const Projects = () => {
                 </CardActionArea>
               </Card>
             </div>
+            <div className="card">
+              <Card
+                sx={{
+                  maxWidth: {
+                    sm: 300,
+                    lg: 345,
+                  },
+                }}
+              >
+                <CardActionArea href="https://github.com/GTBitsOfGood/helping-mamas" target="_blank">
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image="https://i.ibb.co/jL55NxY/My-project-1.png"
+                    alt="helping mamas image"
+                  />
+                  <CardContent>
+                    <ThemeProvider theme={theme}>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Helping Mamas Web App
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Developing a website to manage events, volunteers, applications, and more for Helping Mamas, a non-profit organization dedicated to providing mothers with supplies for their babies. Backed by React, Node, and MongoDB to be handed off end of semester
+                      </Typography>
+                    </ThemeProvider>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </div>
+
 
             <div className="card">
               <Card

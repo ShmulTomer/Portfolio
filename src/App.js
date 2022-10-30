@@ -30,9 +30,9 @@ function App() {
             options={{
               strings: [
                 "Georgia Tech Student",
+                "Plane & Helicopter Pilot",
                 "Data Structures & Algorithms TA",
                 "Software Engineer",
-                "Plane & Helicopter Pilot",
               ],
               autoStart: true,
               loop: true,
