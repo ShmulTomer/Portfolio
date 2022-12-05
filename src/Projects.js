@@ -74,7 +74,7 @@ const Projects = () => {
                       <Typography variant="body2" color="text.secondary">
                         Website that allows users to create accounts, submit
                         posts, reply and vote on others, and resolve threads on
-                        request. Built using React JS, Supabase DB, and hosted
+                        request. Built using React JS, PostgreSQL, and hosted
                         through AWS
                       </Typography>
                     </ThemeProvider>
@@ -126,6 +126,70 @@ const Projects = () => {
                     lg: 345,
                   },
                 }}
+              >
+                <CardActionArea href="https://github.com/GTBitsOfGood/helping-mamas" target="_blank">
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image="https://i.ibb.co/jL55NxY/My-project-1.png"
+                    alt="helping mamas image"
+                  />
+                  <CardContent>
+                    <ThemeProvider theme={theme}>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Helping Mamas Web App
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Developing a website to manage events, volunteers, applications, and more for Helping Mamas, a non-profit organization dedicated to providing mothers with supplies for their babies. Backed by React, Node, and MongoDB to be handed off end of semester
+                      </Typography>
+                    </ThemeProvider>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </div>
+
+
+            <div className="card">
+              <Card
+                sx={{
+                  maxWidth: {
+                    sm: 300,
+                    lg: 345,
+                  },
+                  minHeight: "485px",
+                }}
+              >
+                <CardActionArea href="https://devpost.com/software/stockify-i9n674" target="_blank">
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image="https://i.ibb.co/93JmJWz/Stockify.png"
+                    alt="stockify"
+                  />
+                  <CardContent>
+                    <ThemeProvider theme={theme}>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Stockify Portfolio Optimizer
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Built a stock market beginner-friendly portfolio creation tool for the HackGT hackathon. Application uses mean-variance optimization algorithm to determine investment with low risk based on past market volatility.
+                        Backed using React Native front-end, Flask, and Python libraries 
+                      
+                      </Typography>
+                    </ThemeProvider>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </div>
+
+            <div className="card">
+              <Card
+                sx={{
+                  maxWidth: {
+                    sm: 300,
+                    lg: 345,
+                  },
+                }}
               > 
                 <CardActionArea href="https://drive.google.com/file/d/1-Y2mvSFgJndwJv7-wK5FUIJ07K0udZHo/view?usp=sharing" target="_blank">
                   <CardMedia
@@ -159,6 +223,7 @@ const Projects = () => {
                     sm: 300,
                     lg: 345,
                   },
+                  minHeight: "475px",
                 }}
               >
                 <CardActionArea href="https://drive.google.com/drive/folders/1HOu6kWE9X-zFD3FvdBqjHPRHMX0AhQDU?usp=sharing" target="_blank">
@@ -189,55 +254,24 @@ const Projects = () => {
                     sm: 300,
                     lg: 345,
                   },
+                  minHeight: "440px",
                 }}
               >
-                <CardActionArea href="https://github.com/GTBitsOfGood/helping-mamas" target="_blank">
+                <CardActionArea href="https://drive.google.com/drive/folders/1HOu6kWE9X-zFD3FvdBqjHPRHMX0AhQDU?usp=sharing" target="_blank">
                   <CardMedia
                     component="img"
                     height="140"
-                    image="https://i.ibb.co/jL55NxY/My-project-1.png"
-                    alt="helping mamas image"
+                    image="https://i.ibb.co/x2rRz55/Color-Picker.png"
+                    alt="color picker image"
                   />
                   <CardContent>
                     <ThemeProvider theme={theme}>
                       <Typography gutterBottom variant="h5" component="div">
-                        Helping Mamas Web App
+                        Game Boy Advance Color Picker
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Developing a website to manage events, volunteers, applications, and more for Helping Mamas, a non-profit organization dedicated to providing mothers with supplies for their babies. Backed by React, Node, and MongoDB to be handed off end of semester
-                      </Typography>
-                    </ThemeProvider>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </div>
-
-
-            <div className="card">
-              <Card
-                sx={{
-                  maxWidth: {
-                    sm: 300,
-                    lg: 345,
-                  },
-                }}
-              >
-                <CardActionArea href="https://devpost.com/software/stockify-i9n674" target="_blank">
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image="https://i.ibb.co/93JmJWz/Stockify.png"
-                    alt="stockify"
-                  />
-                  <CardContent>
-                    <ThemeProvider theme={theme}>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Stockify Portfolio Optimizer
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Built a stock market beginner-friendly portfolio creation tool for the HackGT hackathon. Application uses mean-variance optimization algorithm to determine investment with low risk based on past market volatility.
-                        Backed using React Native front-end, Flask, and Python libraries 
-                      
+    
+                      Created a color picker in Game Boy Advance, using Direct Memory Access and state machine principles; for CS 2110 Computer Organization coursework
                       </Typography>
                     </ThemeProvider>
                   </CardContent>
@@ -246,6 +280,7 @@ const Projects = () => {
             </div>
 
           </ThemeProvider>
+          
           
           
         </div>
