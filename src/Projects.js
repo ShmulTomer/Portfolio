@@ -262,7 +262,7 @@ const Projects = () => {
                     component="img"
                     height="140"
                     image="https://i.ibb.co/x2rRz55/Color-Picker.png"
-                    alt="color picker image"
+                    alt="color picker image "
                   />
                   <CardContent>
                     <ThemeProvider theme={theme}>
