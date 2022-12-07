@@ -254,7 +254,7 @@ const Projects = () => {
                   minHeight: "440px",
                 }}
               >
-                <CardActionArea href="https://drive.google.com/drive/folders/1HOu6kWE9X-zFD3FvdBqjHPRHMX0AhQDU?usp=sharing" target="_blank">
+                <CardActionArea href="https://github.com/ShmulTomer/GBA-Color-Picker" target="_blank">
                   <CardMedia
                     component="img"
                     height="140"
