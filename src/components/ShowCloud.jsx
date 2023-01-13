@@ -21,6 +21,7 @@ export function ShowCloud() {
             <Float speed={0.7} rotationInteisty={0.5} floatIntesity={1}>
              <Cloud position={[0.15, 0, 0]} rotation={[0, 1, 0]} />
             </Float>
+            
 
           </Suspense>
           
