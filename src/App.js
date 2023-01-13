@@ -13,7 +13,6 @@ import ScrollUpButton from "react-scroll-up-button";
 import ReactGA from "react-ga";
 import {ShowPlane} from "./components/ShowPlane.jsx"
 import {ShowCessna} from "./components/ShowCessna.jsx"
-import {ShowSkateboard} from "./components/ShowSkateboard.jsx"
 import {ShowCloud} from "./components/ShowCloud.jsx"
 import { Cloud, Plane } from '@react-three/drei';
 
@@ -52,9 +51,6 @@ function App() {
       <div className="Dcloud2">
       <ShowCloud />
       </div>
-      {/* <div className="Dboard">
-      <ShowSkateboard />
-      </div> */}
       
         <header className="App-header">Tomer Shmul</header>
         <div className="App-header2">

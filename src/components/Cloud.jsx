@@ -8,9 +8,10 @@ title: Low Poly Cloud
 
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import modelPath from "./cloud.glb"
 
 export default function Cloud(props) {
-  const { nodes, materials } = useGLTF("/cloud.glb");
+  const { nodes, materials } = useGLTF(modelPath);
   return (
     <group {...props} dispose={null} scale={0.1}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
