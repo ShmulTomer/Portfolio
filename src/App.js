@@ -11,6 +11,12 @@ import Projects from "./Projects";
 import { useRef } from "react";
 import ScrollUpButton from "react-scroll-up-button";
 import ReactGA from "react-ga";
+import {ShowPlane} from "./components/ShowPlane.jsx"
+import {ShowCessna} from "./components/ShowCessna.jsx"
+import {ShowSkateboard} from "./components/ShowSkateboard.jsx"
+import {ShowCloud} from "./components/ShowCloud.jsx"
+import { Cloud, Plane } from '@react-three/drei';
+
 
 ReactGA.initialize("G-300CPG4KSC");
 
@@ -20,10 +26,36 @@ function App() {
     testRef.current.scrollIntoView({
       behavior: "smooth",
     });
+ /*
+    propeller spinning
+    clouds
 
+    rocket ship on the bottom
+
+    lags behind the mouse
+    follows it slowly
+
+    
+ */
   return (
     <>
       <div className="App">
+      {/* <div className="Dcube">
+      <ShowPlane /> 
+      </div> */}
+      <div className="Dplane">
+      <ShowCessna />
+      </div>
+      <div className="Dcloud1">
+      <ShowCloud />
+      </div>
+      <div className="Dcloud2">
+      <ShowCloud />
+      </div>
+      {/* <div className="Dboard">
+      <ShowSkateboard />
+      </div> */}
+      
         <header className="App-header">Tomer Shmul</header>
         <div className="App-header2">
           <Typewriter
@@ -41,6 +73,9 @@ function App() {
               pauseFor: 70,
             }}
           />
+        </div>
+        <div>
+          
         </div>
         <div className="icons">
           <a className="icon" href="https://www.linkedin.com/in/tomer-shmul/">
