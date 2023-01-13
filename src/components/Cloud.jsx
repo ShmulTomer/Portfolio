@@ -10,7 +10,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export default function Cloud(props) {
-  const { nodes, materials } = useGLTF("/cloud.glb");
+  const { nodes, materials } = useGLTF("./cloud.glb");
   return (
     <group {...props} dispose={null} scale={0.1}>
       <group rotation={[-Math.PI / 2, 0, 0]}>

@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export default function Cessna(props) {
-  const { nodes, materials } = useGLTF("/Cessna_172.gltf");
+  const { nodes, materials } = useGLTF("./Cessna_172.gltf");
   return (
     <group {...props} dispose={null} scale={0.05}>
       <mesh

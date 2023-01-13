@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export default function Plane(props) {
-  const { nodes, materials } = useGLTF("/cube.glb");
+  const { nodes, materials } = useGLTF("./cube.glb");
   return (
     <group {...props} dispose={null} scale={0.25}>
       <mesh
