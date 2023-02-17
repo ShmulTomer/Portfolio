@@ -6,6 +6,7 @@ import {
   FaEnvelopeSquare,
   FaGithubSquare
 } from "react-icons/fa";
+import { Avatar } from "flowbite-react";
 import Typewriter from "typewriter-effect";
 import Projects from "./Projects";
 import { useRef } from "react";
@@ -34,25 +35,53 @@ function App() {
     lags behind the mouse
     follows it slowly
 
+
+    name in front of everything
+    go the other way
+    add one or two more clouds in the bottom
     
- */
+    few layers of hills and on each put a couple projects
+
+    plane flies off when u click arrow and then screen goes down
+
+    maybe house on the hills
+
+    change image and text being different sizes
+
+    make each house (project), two windows/3/4 and each window you see something else
+    
+    put some form of resume
+
+    
+    */
   return (
     <>
       <div className="App">
       {/* <div className="Dcube">
       <ShowPlane /> 
       </div> */}
-      <div className="Dplane">
-      <ShowCessna />
-      </div>
+{/*       
       <div className="Dcloud1">
       <ShowCloud />
       </div>
       <div className="Dcloud2">
       <ShowCloud />
       </div>
-      
-        <header className="App-header">Tomer Shmul</header>
+      <div className="Dplane">
+      <ShowCessna />
+      </div> */}
+      <header className="App-header">
+      <div className="flex flex-wrap gap-2">
+  <Avatar
+    img="https://media.licdn.com/dms/image/C5603AQFvg932RnYBeA/profile-displayphoto-shrink_800_800/0/1652957459745?e=1681948800&v=beta&t=uoBGBZrhdRi_3AazlZPpWc6BFgO9o67wJQwBiotH1WY"
+    rounded={true}
+    bordered={true}
+    size="xl"
+  />
+</div>
+      </header>
+        <header className="App-header">
+        Tomer Shmul</header>
         <div className="App-header2">
           <Typewriter
             options={{

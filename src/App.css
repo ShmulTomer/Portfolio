@@ -66,8 +66,9 @@
 
 .Dplane {
   position: absolute;
-  right: 50px;
-  bottom: 100px;
+  
+  width: 100vw;
+  height: 100vh;
 }
 
 .Dcloud1 {
@@ -207,7 +208,7 @@
   gap: 40px;
   margin: 20px;
   margin-bottom: 60px;
-  max-width: 750px;
+  max-width: 900px;
 }
 
 .card {
