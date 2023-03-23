@@ -17,8 +17,8 @@
   background: linear-gradient(316deg, #5433FF, #20BDFF, #A5FECB);
 
   */
-  background: linear-gradient(316deg, #0f0e30, #16acde);
-  background-size: 200% 200%;
+  background: linear-gradient(316deg, #141242, #000000);
+  background-size: 100% 100%;
   animation: gradient 10s ease infinite;
   height: 100vh;
   align-content: center;
@@ -62,6 +62,15 @@
   right: 5px;
   bottom: 50px;
 }
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+}
+
+
 
 
 .Dplane {
@@ -228,13 +237,13 @@
 
 .title {
   padding: 30px;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
   font-family: "Fredoka One", cursive;
   font-size: 5rem;
   font-weight: 400;
   color: white;
   filter: drop-shadow(0px 8px 8px rgba(247, 244, 244, 0.137));
-  text-shadow: 0.05em 0 0 #0b8684;
+  text-shadow: 0.05em 0 0 #1c1c6f;
   animation: glitch 3s infinite;
 }
 
@@ -260,10 +269,10 @@
 
 @keyframes glitch {
   0% {
-    text-shadow: 0.05em 0 0 #0b8684;
+    text-shadow: 0.05em 0 0 #1c1c6f;
   }
   50% {
-    text-shadow: 0.05em 0.04em 0 #0b8684;
+    text-shadow: 0.05em 0.04em 0 #1c1c6f;
   }
   100% {
   }
@@ -276,6 +285,12 @@
   .icons {
     font-size: 3rem;
     padding-right: 10px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    
   }
 
   .icon {

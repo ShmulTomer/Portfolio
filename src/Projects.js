@@ -7,6 +7,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
+import {
+  HiAcademicCap,
+  HiArrowSmRight,
+  HiBriefcase,
+  HiLightBulb,
+  HiBeaker,
+} from "react-icons/hi";
 import { createTheme } from "@mui/material/styles";
 
 const Projects = () => {
@@ -45,20 +52,28 @@ const Projects = () => {
       <div className="content">
         <div className="title">ME</div>
 
-        <div className="cards">
+        <div className="w-9/12">
           <Card>
             <Timeline>
               <Timeline.Item>
                 <Timeline.Point />
                 <Timeline.Content>
-                  <Timeline.Time>Present</Timeline.Time>
-                  <Timeline.Title>
-                    Georgia Institute of Technology
+                  <Timeline.Title className="flex items-center pb-1">
+                    <HiAcademicCap />
+                    &nbsp;Education
                   </Timeline.Title>
                   <Timeline.Body>
-                    BS in Computer Science, Minor in Technology & Manangement{" "}
-                    <br></br>
-                    4.0 GPA
+                    <div className="gap-2 space-y-0">
+                      <Badge color="success" size="xl">
+                        Georgia Institute of Technology
+                      </Badge>
+                      <Badge color="dark" icon={HiArrowSmRight}>
+                        BS in Computer Science
+                      </Badge>
+                      <Badge color="dark" icon={HiArrowSmRight}>
+                        Minor in Technology & Manangement
+                      </Badge>
+                    </div>
                   </Timeline.Body>
                   {/* <Button color="gray">
         Learn More
@@ -69,79 +84,98 @@ const Projects = () => {
               <Timeline.Item>
                 <Timeline.Point />
                 <Timeline.Content>
-                  <Timeline.Time>August 2022 - Present</Timeline.Time>
-                  <Timeline.Title>
-                    Data Structures & Algorithms Teaching Assistant
+                  <Timeline.Title className="flex items-center pb-1">
+                    <HiBriefcase />
+                    &nbsp;Experience
                   </Timeline.Title>
+
                   <Timeline.Body>
-                    Lead a weekly review class, debug and review homework,
-                    <br></br>
-                    hold office hours
-                    
+                    <div className="gap-2 space-y-2">
+                      <Badge color="purple" size="sm">
+                        Data Structures & Algorithms TA
+                      </Badge>
+                      <Badge color="purple" size="sm" >
+                        Software Developer - Bits of Good
+                      </Badge>
+                      <Badge color="purple" size="sm" >
+                        Board Member - Startup Exchange
+                      </Badge>
+                    </div>
                   </Timeline.Body>
-                  {/* <Button color="gray">
-        Learn More
-        
-      </Button> */}
                 </Timeline.Content>
               </Timeline.Item>
               <Timeline.Item>
                 <Timeline.Point />
                 <Timeline.Content>
-                  <Timeline.Time>August 2022 - Present</Timeline.Time>
-                  <Timeline.Title>
-                    Software Developer - Bits of Good
-                  </Timeline.Title>
                   <Timeline.Body>
-                    Full-stack development for non-profits in Atlanta; 
-                    <br></br>
-                    currently developing a volunteer management platform
-                    
+                    <Timeline.Title className="flex items-center pb-1">
+                      <HiBeaker />
+                      &nbsp;Interests
+                    </Timeline.Title>
+                    <div className="gap-2 space-y-2">
+                      <Badge color="pink" size="sm">
+                        Flying Planes & Helicopters 🚁
+                      </Badge>
+                      <Badge color="pink" size="sm">
+                        Skydiving 🪂
+                      </Badge>
+                      <Badge color="pink" size="sm">
+                        Electric Skateboarding 🛹
+                      </Badge>
+                    </div>
                   </Timeline.Body>
-                  {/* <Button color="gray">
-        Learn More
-        
-      </Button> */}
                 </Timeline.Content>
               </Timeline.Item>
 
               <Timeline.Item>
                 <Timeline.Point />
                 <Timeline.Content>
-                  <Timeline.Time>August 2021 - Present</Timeline.Time>
-                  <Timeline.Title>Yellow Jacket Flying Club</Timeline.Title>
                   <Timeline.Body>
-                    Licensed plane & helicopter pilot with 150+ hrs flight time
-      </Timeline.Body>
+                  <Timeline.Title className="flex items-center"><HiLightBulb />&nbsp;Skills</Timeline.Title>
+                    <div className="flex items-end gap-2 space-y-2 overflow-auto">
+                      <Badge color="info" size="sm">
+                        Java
+                      </Badge>
+                      <Badge color="info" size="sm">
+                        Python
+                      </Badge>
+                      <Badge color="info" size="sm">
+                        C
+                      </Badge>
+                      <Badge color="info" size="sm">
+                        SQL
+                      </Badge>
+                      <Badge color="info" size="sm">
+                        JavaScript
+                      </Badge>
+                      <Badge color="purple" size="sm">
+                        React
+                      </Badge>
+                      <Badge color="purple" size="sm">
+                        Node
+                      </Badge>
+                      <Badge color="purple" size="sm">
+                        MongoDB
+                      </Badge>
+                      <Badge color="purple" size="sm">
+                        Git
+                      </Badge>
+                      <Badge color="pink" size="sm">
+                        AWS
+                      </Badge>
+                      <Badge color="pink" size="sm">
+                        Docker
+                      </Badge>
+                      <Badge color="pink" size="sm">
+                        Figma
+                      </Badge>
+                    </div>
+                  </Timeline.Body>
                 </Timeline.Content>
               </Timeline.Item>
-              <Timeline.Item>
-                <Timeline.Point />
-                <Timeline.Content>
-                  <Timeline.Time>August 2021 - Present</Timeline.Time>
-                  <Timeline.Title>Startup Exchange</Timeline.Title>
-                  <Timeline.Body>
-                    
-      </Timeline.Body>
-                </Timeline.Content>
-              </Timeline.Item>
-              {/* <Timeline.Item>
-    <Timeline.Point />
-    <Timeline.Content>
-      <Timeline.Time>
-        April 2022
-      </Timeline.Time>
-      <Timeline.Title>
-        E-Commerce UI code in Tailwind CSS
-      </Timeline.Title>
-      <Timeline.Body>
-        Get started with dozens of web components and interactive elements built on top of Tailwind CSS.
-      </Timeline.Body>
-    </Timeline.Content>
-  </Timeline.Item> */}
             </Timeline>
           </Card>
-          <div className="flex flex-wrap gap-2 max-w-lg ">
+          {/* <div className="flex flex-wrap gap-2 max-w-lg ">
           <Card>
           
   <Badge
@@ -223,9 +257,7 @@ const Projects = () => {
     PostgreSQL
   </Badge>
   </Card>
-</div>
-          
-         
+</div> */}
         </div>
         {/* <a href="https://drive.google.com/file/d/1AZ0YkMx2IDIDNz9gIyMdGfAnU3kr_vyF/view?usp=sharing" target="_blank">
           <div className="resume">
@@ -235,8 +267,7 @@ const Projects = () => {
 
         <div className="title">PROJECTS</div>
         <div className="cards">
-        <ThemeProvider theme={siz}>
-            
+          <ThemeProvider theme={siz}>
             <div className="card">
               <CardX
                 sx={{
@@ -246,7 +277,10 @@ const Projects = () => {
                   },
                 }}
               >
-                <CardActionArea href="https://github.com/GTBitsOfGood/helping-mamas" target="_blank">
+                <CardActionArea
+                  href="https://github.com/GTBitsOfGood/helping-mamas"
+                  target="_blank"
+                >
                   <CardMedia
                     component="img"
                     height="140"
@@ -259,7 +293,9 @@ const Projects = () => {
                         Volunteer Resource Manangement
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Developing a website to manage events, volunteers, applications, and more for several non-profit organizations; Backed by React, Node, and MongoDB
+                        Developing a website to manage events, volunteers,
+                        applications, and more for several non-profit
+                        organizations; Backed by React, Node, and MongoDB
                       </Typography>
                     </ThemeProvider>
                   </CardContent>
@@ -276,7 +312,10 @@ const Projects = () => {
                   minHeight: "485px",
                 }}
               >
-                <CardActionArea href="https://devpost.com/software/stockify-i9n674" target="_blank">
+                <CardActionArea
+                  href="https://devpost.com/software/stockify-i9n674"
+                  target="_blank"
+                >
                   <CardMedia
                     component="img"
                     height="140"
@@ -289,9 +328,12 @@ const Projects = () => {
                         Stock Portfolio Optimization
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Built a stock market beginner-friendly portfolio creation tool for the HackGT hackathon. Application uses mean-variance optimization algorithm to determine investment with low risk based on past market volatility.
-                        Backed using React Native front-end, Flask, and Python libraries 
-                      
+                        Built a stock market beginner-friendly portfolio
+                        creation tool for the HackGT hackathon. Application uses
+                        mean-variance optimization algorithm to determine
+                        investment with low risk based on past market
+                        volatility. Backed using React Native front-end, Flask,
+                        and Python libraries
                       </Typography>
                     </ThemeProvider>
                   </CardContent>
@@ -331,7 +373,7 @@ const Projects = () => {
                   </CardContent>
                 </CardActionArea>
               </CardX>
-            </div> 
+            </div>
 
             <div className="card">
               <CardX
@@ -343,7 +385,10 @@ const Projects = () => {
                   minHeight: "430px",
                 }}
               >
-                <CardActionArea href="https://github.com/ShmulTomer/TowerDefense" target="_blank">
+                <CardActionArea
+                  href="https://github.com/ShmulTomer/TowerDefense"
+                  target="_blank"
+                >
                   <CardMedia
                     component="img"
                     height="400"
@@ -368,10 +413,6 @@ const Projects = () => {
               </CardX>
             </div>
 
-            
-
-
-            
             <div className="card">
               <CardX
                 sx={{
@@ -380,8 +421,11 @@ const Projects = () => {
                     lg: 345,
                   },
                 }}
-              > 
-                <CardActionArea href="https://drive.google.com/file/d/1-Y2mvSFgJndwJv7-wK5FUIJ07K0udZHo/view?usp=sharing" target="_blank">
+              >
+                <CardActionArea
+                  href="https://drive.google.com/file/d/1-Y2mvSFgJndwJv7-wK5FUIJ07K0udZHo/view?usp=sharing"
+                  target="_blank"
+                >
                   <CardMedia
                     component="img"
                     height="140"
@@ -394,8 +438,12 @@ const Projects = () => {
                         DriveWay Prototype
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                      Conducted market research on distracted driving through 20+ interviews with experts and analysis of present solutions. Designed a dashboard smart phone mount through 3D model and Figma prototype of mobile app. Pitched product to professors, winning top 5 out of 20 teams
-
+                        Conducted market research on distracted driving through
+                        20+ interviews with experts and analysis of present
+                        solutions. Designed a dashboard smart phone mount
+                        through 3D model and Figma prototype of mobile app.
+                        Pitched product to professors, winning top 5 out of 20
+                        teams
                       </Typography>
                     </ThemeProvider>
                   </CardContent>
@@ -403,9 +451,6 @@ const Projects = () => {
               </CardX>
             </div>
 
-            
-
-            
             <div className="card">
               <CardX
                 sx={{
@@ -416,7 +461,10 @@ const Projects = () => {
                   minHeight: "475px",
                 }}
               >
-                <CardActionArea href="https://drive.google.com/drive/folders/1HOu6kWE9X-zFD3FvdBqjHPRHMX0AhQDU?usp=sharing" target="_blank">
+                <CardActionArea
+                  href="https://drive.google.com/drive/folders/1HOu6kWE9X-zFD3FvdBqjHPRHMX0AhQDU?usp=sharing"
+                  target="_blank"
+                >
                   <CardMedia
                     component="img"
                     height="140"
@@ -429,8 +477,12 @@ const Projects = () => {
                         Metro Kiosk UI
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-    
-                      Surveyed, interviews, and observed users of the Barcelona metro kiosk and designed a new zone selection interaction for the metro system. Created low-fidelity design through paper prototype and tested based on usability heuristics; working on high fidelity prototype through Figma
+                        Surveyed, interviews, and observed users of the
+                        Barcelona metro kiosk and designed a new zone selection
+                        interaction for the metro system. Created low-fidelity
+                        design through paper prototype and tested based on
+                        usability heuristics; working on high fidelity prototype
+                        through Figma
                       </Typography>
                     </ThemeProvider>
                   </CardContent>
@@ -447,7 +499,10 @@ const Projects = () => {
                   minHeight: "440px",
                 }}
               >
-                <CardActionArea href="https://github.com/ShmulTomer/GBA-Color-Picker" target="_blank">
+                <CardActionArea
+                  href="https://github.com/ShmulTomer/GBA-Color-Picker"
+                  target="_blank"
+                >
                   <CardMedia
                     component="img"
                     height="140"
@@ -460,15 +515,15 @@ const Projects = () => {
                         Game Boy Advance Color Picker
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-    
-                      Created a color picker in Game Boy Advance, using Direct Memory Access and state machine principles; for CS 2110 Computer Organization coursework
+                        Created a color picker in Game Boy Advance, using Direct
+                        Memory Access and state machine principles; for CS 2110
+                        Computer Organization coursework
                       </Typography>
                     </ThemeProvider>
                   </CardContent>
                 </CardActionArea>
               </CardX>
             </div>
-
           </ThemeProvider>
           {/* <div className="max-w-sm">
             <Card
