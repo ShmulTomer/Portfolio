@@ -7,6 +7,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
+import { FaGithub } from "react-icons/fa";
+import { HiHand } from "react-icons/hi";
 import {
   HiAcademicCap,
   HiArrowSmRight,
@@ -52,7 +54,7 @@ const Projects = () => {
       <div className="content">
         <div className="title">ME</div>
 
-        <div className="w-9/12">
+        <div className="w-9/12 max-w-lg">
           <Card>
             <Timeline>
               <Timeline.Item>
@@ -64,7 +66,7 @@ const Projects = () => {
                   </Timeline.Title>
                   <Timeline.Body>
                     <div className="gap-2 space-y-0">
-                      <Badge color="success" size="xl">
+                      <Badge color="info" size="sm" className="w-64">
                         Georgia Institute of Technology
                       </Badge>
                       <Badge color="dark" icon={HiArrowSmRight}>
@@ -75,10 +77,7 @@ const Projects = () => {
                       </Badge>
                     </div>
                   </Timeline.Body>
-                  {/* <Button color="gray">
-        Learn More
-        
-      </Button> */}
+                 
                 </Timeline.Content>
               </Timeline.Item>
               <Timeline.Item>
@@ -90,14 +89,14 @@ const Projects = () => {
                   </Timeline.Title>
 
                   <Timeline.Body>
-                    <div className="gap-2 space-y-2">
-                      <Badge color="purple" size="sm">
+                    <div className="flex-row items-end gap-2 space-y-2">
+                      <Badge color="purple" size="sm" className="w-64">
                         Data Structures & Algorithms TA
                       </Badge>
-                      <Badge color="purple" size="sm" >
+                      <Badge color="purple" size="sm" className="w-64">
                         Software Developer - Bits of Good
                       </Badge>
-                      <Badge color="purple" size="sm" >
+                      <Badge color="purple" size="sm" className="w-64">
                         Board Member - Startup Exchange
                       </Badge>
                     </div>
@@ -112,14 +111,14 @@ const Projects = () => {
                       <HiBeaker />
                       &nbsp;Interests
                     </Timeline.Title>
-                    <div className="gap-2 space-y-2">
-                      <Badge color="pink" size="sm">
+                    <div className="flex-row items-end gap-2 space-y-2">
+                      <Badge color="pink" size="sm" className="w-64">
                         Flying Planes & Helicopters 🚁
                       </Badge>
-                      <Badge color="pink" size="sm">
+                      <Badge color="pink" size="sm" className="w-64">
                         Skydiving 🪂
                       </Badge>
-                      <Badge color="pink" size="sm">
+                      <Badge color="pink" size="sm" className="w-64">
                         Electric Skateboarding 🛹
                       </Badge>
                     </div>
@@ -266,6 +265,62 @@ const Projects = () => {
         <br></br>
 
         <div className="title">PROJECTS</div>
+        
+        <div className="max-w-xl">
+  <Card
+    horizontal={true}
+    imgSrc="https://i.ibb.co/yRJLq0M/GT-Complaint-MUP.jpg"
+    className = "h-72"
+  >
+    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      Talk GT
+    </h5>
+    <p className="font-normal text-gray-700 dark:text-gray-400">
+    Website that allows users to create accounts, submit
+                        posts, reply and vote on others, and resolve threads on
+                        request.
+    </p>
+    <div className="flex flex-wrap gap-2 max-w-lg ">
+    <Badge
+    color="info"
+    size="xl"
+  >
+    React
+  </Badge>
+  <Badge
+    color="info"
+    size="xl"
+  >
+    PostgreSQL
+  </Badge>
+  <Badge
+    color="info"
+    size="xl"
+  >
+   AWS
+  </Badge>
+  </div>
+  <div className="flex flex-wrap gap-2 max-w-lg ">
+  <Button outline={true}
+      gradientDuoTone="cyanToBlue"
+>
+<div className="flex items-center gap-0.5">
+     <HiHand className="mr-2 h-4 w-4"></HiHand>Demo
+     </div>
+    </Button>
+    <Button outline={true}
+      gradientDuoTone="purpleToPink"
+      
+>
+          <div className="flex items-center gap-0.5">
+     <FaGithub className="mr-2 h-4 w-4"></FaGithub>GitHub
+     </div>
+    </Button>
+          </div>
+  </Card>
+</div>
+
+
         <div className="cards">
           <ThemeProvider theme={siz}>
             <div className="card">
