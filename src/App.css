@@ -228,6 +228,15 @@
   transform: scale(1.05);
 }
 
+.outerCard {
+  
+}
+
+.innerCard {
+  height: 275px;
+  width: 900px;
+}
+
 .content {
   align-items: center;
   display: flex;
@@ -285,6 +294,11 @@
   .icons {
     font-size: 3rem;
     padding-right: 10px;
+  }
+
+  .innerCard {
+    height: 550px;
+    width: 350px;
   }
 
   .avatar {

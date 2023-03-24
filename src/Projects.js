@@ -54,7 +54,7 @@ const Projects = () => {
       <div className="content">
         <div className="title">ME</div>
 
-        <div className="w-9/12 max-w-lg">
+        <div className="w-10/12 max-w-xl">
           <Card>
             <Timeline>
               <Timeline.Item>
@@ -77,7 +77,6 @@ const Projects = () => {
                       </Badge>
                     </div>
                   </Timeline.Body>
-                 
                 </Timeline.Content>
               </Timeline.Item>
               <Timeline.Item>
@@ -130,7 +129,10 @@ const Projects = () => {
                 <Timeline.Point />
                 <Timeline.Content>
                   <Timeline.Body>
-                  <Timeline.Title className="flex items-center"><HiLightBulb />&nbsp;Skills</Timeline.Title>
+                    <Timeline.Title className="flex items-center">
+                      <HiLightBulb />
+                      &nbsp;Skills
+                    </Timeline.Title>
                     <div className="flex items-end gap-2 space-y-2 overflow-auto">
                       <Badge color="info" size="sm">
                         Java
@@ -174,89 +176,7 @@ const Projects = () => {
               </Timeline.Item>
             </Timeline>
           </Card>
-          {/* <div className="flex flex-wrap gap-2 max-w-lg ">
-          <Card>
           
-  <Badge
-    color="info"
-    size="xl"
-  >
-    Java
-  </Badge>
-  <Badge
-    color="info"
-    size="xl"
-  >
-    Python
-  </Badge>
-  <Badge
-    color="info"
-    size="xl"
-  >
-    C
-  </Badge>
-  <Badge
-    color="info"
-    size="xl"
-  >
-    SQL
-  </Badge>
-  <Badge
-    color="info"
-    size="xl"
-  >
-    JavaScript
-  </Badge>
-  <Badge
-    color="purple"
-    size="xl"
-  >
-    React
-  </Badge>
-  <Badge
-    color="purple"
-    size="xl"
-  >
-    Node
-  </Badge>
-  <Badge
-    color="purple"
-    size="xl"
-  >
-    MongoDB
-  </Badge>
-  <Badge
-    color="purple"
-    size="xl"
-  >
-    Git
-  </Badge>
-  <Badge
-    color="pink"
-    size="xl"
-  >
-    AWS
-  </Badge>
-  <Badge
-    color="pink"
-    size="xl"
-  >
-    Docker
-  </Badge>
-  <Badge
-    color="pink"
-    size="xl"
-  >
-    Figma
-  </Badge>
-  <Badge
-    color="pink"
-    size="xl"
-  >
-    PostgreSQL
-  </Badge>
-  </Card>
-</div> */}
         </div>
         {/* <a href="https://drive.google.com/file/d/1AZ0YkMx2IDIDNz9gIyMdGfAnU3kr_vyF/view?usp=sharing" target="_blank">
           <div className="resume">
@@ -265,66 +185,50 @@ const Projects = () => {
         <br></br>
 
         <div className="title">PROJECTS</div>
-        
-        <div className="max-w-xl">
-  <Card
-    horizontal={true}
-    imgSrc="https://i.ibb.co/yRJLq0M/GT-Complaint-MUP.jpg"
-    className = "h-72"
-  >
-    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-      Talk GT
-    </h5>
-    <p className="font-normal text-gray-700 dark:text-gray-400">
-    Website that allows users to create accounts, submit
-                        posts, reply and vote on others, and resolve threads on
-                        request.
-    </p>
-    <div className="flex flex-wrap gap-2 max-w-lg ">
-    <Badge
-    color="info"
-    size="xl"
-  >
-    React
-  </Badge>
-  <Badge
-    color="info"
-    size="xl"
-  >
-    PostgreSQL
-  </Badge>
-  <Badge
-    color="info"
-    size="xl"
-  >
-   AWS
-  </Badge>
-  </div>
-  <div className="flex flex-wrap gap-2 max-w-lg ">
-  <Button outline={true}
-      gradientDuoTone="cyanToBlue"
->
-<div className="flex items-center gap-0.5">
-     <HiHand className="mr-2 h-4 w-4"></HiHand>Demo
-     </div>
-    </Button>
-    <Button outline={true}
-      gradientDuoTone="purpleToPink"
-      
->
-          <div className="flex items-center gap-0.5">
-     <FaGithub className="mr-2 h-4 w-4"></FaGithub>GitHub
-     </div>
-    </Button>
-          </div>
-  </Card>
-</div>
 
+        <div className="outerCard">
+         <Card
+            horizontal={true}
+            imgSrc="https://i.ibb.co/yRJLq0M/GT-Complaint-MUP.jpg"
+            className="innerCard"
+          >
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Talk GT
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              Website that allows users to create accounts, submit posts, reply
+              and vote on others, and resolve threads on request.
+            </p>
+            <div className="flex flex-wrap gap-2 max-w-lg ">
+              <Badge color="info" size="xl">
+                React
+              </Badge>
+              <Badge color="info" size="xl">
+                PostgreSQL
+              </Badge>
+              <Badge color="info" size="xl">
+                AWS
+              </Badge>
+            </div>
+            <div className="flex flex-wrap gap-2 max-w-lg ">
+              <Button outline={true} gradientDuoTone="cyanToBlue">
+                <div className="flex items-center gap-0.5">
+                  <HiHand className="mr-2 h-4 w-4"></HiHand>Demo
+                </div>
+              </Button>
+              <Button outline={true} gradientDuoTone="purpleToPink">
+                <div className="flex items-center gap-0.5">
+                  <FaGithub className="mr-2 h-4 w-4"></FaGithub>GitHub
+                </div>
+              </Button>
+            </div>
+          </Card>
+        </div>
 
         <div className="cards">
           <ThemeProvider theme={siz}>
             <div className="card">
-              <CardX
+              <CardX 
                 sx={{
                   maxWidth: {
                     sm: 300,
