@@ -88,14 +88,14 @@ const Projects = () => {
                   </Timeline.Title>
 
                   <Timeline.Body>
-                    <div className="flex-row items-end gap-2 space-y-2">
-                      <Badge color="purple" size="sm" className="w-64">
+                    <div className="flex flex-wrap items-end gap-2 ">
+                      <Badge color="purple" size="sm">
                         Data Structures & Algorithms TA
                       </Badge>
-                      <Badge color="purple" size="sm" className="w-64">
+                      <Badge color="purple" size="sm" >
                         Software Developer - Bits of Good
                       </Badge>
-                      <Badge color="purple" size="sm" className="w-64">
+                      <Badge color="purple" size="sm">
                         Board Member - Startup Exchange
                       </Badge>
                     </div>
@@ -110,16 +110,17 @@ const Projects = () => {
                       <HiBeaker />
                       &nbsp;Interests
                     </Timeline.Title>
-                    <div className="flex-row items-end gap-2 space-y-2">
-                      <Badge color="pink" size="sm" className="w-64">
+                    <div className="flex flex-wrap items-end gap-2 ">
+                      <Badge color="pink" size="sm" >
                         Flying Planes & Helicopters 🚁
                       </Badge>
-                      <Badge color="pink" size="sm" className="w-64">
+                      <Badge color="pink" size="sm" >
                         Skydiving 🪂
                       </Badge>
-                      <Badge color="pink" size="sm" className="w-64">
+                      <Badge color="pink" size="sm" >
                         Electric Skateboarding 🛹
                       </Badge>
+
                     </div>
                   </Timeline.Body>
                 </Timeline.Content>
@@ -128,13 +129,14 @@ const Projects = () => {
               <Timeline.Item>
                 <Timeline.Point />
                 <Timeline.Content>
-                  <Timeline.Body>
-                    <Timeline.Title className="flex items-center">
+                <Timeline.Title className="flex items-center pb-1">
                       <HiLightBulb />
                       &nbsp;Skills
                     </Timeline.Title>
-                    <div className="flex items-end gap-2 space-y-2 overflow-auto">
-                      <Badge color="info" size="sm">
+                  <Timeline.Body className="">
+                    
+                    <div className="flex flex-wrap items-end gap-2">
+                      <Badge color="info" size="sm" >
                         Java
                       </Badge>
                       <Badge color="info" size="sm">
@@ -186,6 +188,7 @@ const Projects = () => {
 
         <div className="title">PROJECTS</div>
 
+          <div className="space-y-6">
         <div className="outerCard">
          <Card
             horizontal={true}
@@ -196,7 +199,7 @@ const Projects = () => {
               Talk GT
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              Website that allows users to create accounts, submit posts, reply
+            Forum for Georgia Tech students to create accounts, submit posts, reply
               and vote on others, and resolve threads on request.
             </p>
             <div className="flex flex-wrap gap-2 max-w-lg ">
@@ -211,7 +214,7 @@ const Projects = () => {
               </Badge>
             </div>
             <div className="flex flex-wrap gap-2 max-w-lg ">
-              <Button outline={true} gradientDuoTone="cyanToBlue">
+              <Button outline={true} gradientDuoTone="cyanToBlue" href="https://www.talkgt.com/" target="_blank">
                 <div className="flex items-center gap-0.5">
                   <HiHand className="mr-2 h-4 w-4"></HiHand>Demo
                 </div>
@@ -224,6 +227,52 @@ const Projects = () => {
             </div>
           </Card>
         </div>
+
+        <div className="outerCard">
+         <Card
+            horizontal={true}
+            imgSrc="https://i.ibb.co/yRJLq0M/GT-Complaint-MUP.jpg"
+            className="innerCard"
+          >
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Talk GT
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              Forum for Georgia Tech students to create accounts, submit posts, reply
+              and vote on others, and resolve threads on request.
+            </p>
+            <div className="flex flex-wrap gap-2 max-w-lg ">
+              <Badge color="info" size="xl">
+                React
+              </Badge>
+              <Badge color="info" size="xl">
+                PostgreSQL
+              </Badge>
+              <Badge color="info" size="xl">
+                AWS
+              </Badge>
+            </div>
+            <div className="flex flex-wrap gap-2 max-w-lg ">
+              <Button outline={true} gradientDuoTone="cyanToBlue" href="https://www.talkgt.com/" target="_blank">
+                <div className="flex items-center gap-0.5">
+                  <HiHand className="mr-2 h-4 w-4"></HiHand>Demo
+                </div>
+              </Button>
+              <Button outline={true} gradientDuoTone="purpleToPink">
+                <div className="flex items-center gap-0.5">
+                  <FaGithub className="mr-2 h-4 w-4"></FaGithub>GitHub
+                </div>
+              </Button>
+            </div>
+          </Card>
+        </div>
+        </div>
+
+
+
+
+
+
 
         <div className="cards">
           <ThemeProvider theme={siz}>
