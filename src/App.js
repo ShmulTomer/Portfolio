@@ -72,7 +72,7 @@ function App() {
       </div> */}
       <header className="App-header">
         <div className="avatar">
-      <div className="avatar">
+      
   {/* <Avatar
     img="https://media.licdn.com/dms/image/C5603AQFvg932RnYBeA/profile-displayphoto-shrink_800_800/0/1652957459745?e=1681948800&v=beta&t=uoBGBZrhdRi_3AazlZPpWc6BFgO9o67wJQwBiotH1WY"
     rounded={true}
@@ -84,7 +84,7 @@ function App() {
 
 <img class="rounded ring-1 ring-gray-300 dark:ring-gray-500" src="https://media.licdn.com/dms/image/C5603AQFvg932RnYBeA/profile-displayphoto-shrink_800_800/0/1652957459745?e=1681948800&v=beta&t=uoBGBZrhdRi_3AazlZPpWc6BFgO9o67wJQwBiotH1WY" alt="Default avatar">
 </img> 
-</div>
+
 </div>
       </header>
         <header className="App-header">

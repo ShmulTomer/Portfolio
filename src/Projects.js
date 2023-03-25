@@ -179,7 +179,7 @@ const Projects = () => {
 
         <div className="title">PROJECTS</div>
 
-        <div className="space-y-6">
+        <div className="space-y-6 pb-12">
           <div className="outerCard">
             <Card
               horizontal={true}
@@ -276,7 +276,7 @@ const Projects = () => {
           <div className="outerCard">
             <Card
               horizontal={true}
-              imgSrc="https://i.ibb.co/0hYQZ4y/Screen-Shot-2021-05-03-at-11-24-00-PM.png"
+              imgSrc="https://i.ibb.co/bBvTrpK/River-Sediment.jpg"
               className="innerCard"
             >
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
