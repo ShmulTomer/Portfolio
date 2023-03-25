@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Arvo:wght@700&family=Dosis:wght@500;600;700;800&family=Fira+Sans&family=Fredoka+One&family=Inter:wght@100;200;300;400;500;600;700&family=Raleway:wght@800&family=Roboto&family=Rubik:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Arvo:wght@700&family=Bungee&family=Dosis:wght@500;600;700;800&family=Fira+Sans&family=Inter:wght@100;200;300;400;500;600;700&family=Raleway:wght@800&family=Roboto&family=Rubik:wght@300;400;500;600&display=swap');
 
 .App {
   /*
@@ -247,7 +248,8 @@
 .title {
   padding: 30px;
   padding-bottom: 20px;
-  font-family: "Fredoka One", cursive;
+
+  font-family: "Bungee", cursive;
   font-size: 5rem;
   font-weight: 400;
   color: white;

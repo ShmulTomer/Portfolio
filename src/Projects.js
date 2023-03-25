@@ -46,7 +46,7 @@ const Projects = () => {
       <div id="stars3"></div>
 
       <div className="content">
-        <div className="title">ME</div>
+        <div className="title">ABOUT ME</div>
 
         <div className="w-10/12 max-w-xl">
           <Card>
