@@ -239,7 +239,7 @@ const Projects = () => {
                 Volunteer Management System
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-                Developing a portal to manage events, volunteers, attendance,
+                Developing a portal to manage events, attendance, rewards,
                 and more for several non-profit organizations.
               </p>
               <div className="flex flex-wrap gap-2 max-w-lg ">
@@ -283,7 +283,7 @@ const Projects = () => {
                 River Sediment Satellite Detection
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-                Water detection and sediment metrics using European satellite imagery.
+                Developed script to detect water in satellite imagery through clustering and overlay sediment metrics.
               </p>
               <div className="flex flex-wrap gap-2 max-w-lg ">
                 <Badge color="info" size="xl">
@@ -328,7 +328,7 @@ const Projects = () => {
                 Stock Portfolio Optimization
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-              Built a stock market beginner-friendly portfolio
+              Built a stock beginner-friendly portfolio
                         creation tool for the HackGT hackathon. Uses
                         mean-variance optimization to determine
                         investment with low risk based on past market

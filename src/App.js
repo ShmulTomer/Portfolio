@@ -60,14 +60,14 @@ function App() {
       {/* <div className="Dcube">
       <ShowPlane /> 
       </div> */}
-{/*       
-      <div className="Dcloud1">
+      
+      {/* <div className="Dcloud1">
       <ShowCloud />
       </div>
       <div className="Dcloud2">
       <ShowCloud />
-      </div>
-      <div className="Dplane">
+      </div> */}
+      {/* <div className="Dplane">
       <ShowCessna />
       </div> */}
       <header className="App-header">
@@ -95,14 +95,14 @@ function App() {
               strings: [
                 "Georgia Tech Student",
                 "Plane & Helicopter Pilot",
-                "Data Structures & Algorithms TA",
+                "Data Structures & Algos TA",
                 "Software Engineer",
               ],
               autoStart: true,
               loop: true,
               delay: 64,
               deleteSpeed: 50,
-              pauseFor: 70,
+              pauseFor: 300,
             }}
           />
         </div>
