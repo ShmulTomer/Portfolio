@@ -194,13 +194,13 @@ const Projects = () => {
                 posts, reply and vote on others, and resolve threads on request.
               </p>
               <div className="flex flex-wrap gap-2 max-w-lg ">
-                <Badge color="warning" size="xl">
+                <Badge color="info" size="xl">
                   React
                 </Badge>
-                <Badge color="warning" size="xl">
+                <Badge color="info" size="xl">
                   PostgreSQL
                 </Badge>
-                <Badge color="warning" size="xl">
+                <Badge color="info" size="xl">
                   AWS
                 </Badge>
               </div>
@@ -385,10 +385,10 @@ const Projects = () => {
                         waves of enemies and a final boss.
               </p>
               <div className="flex flex-wrap gap-2 max-w-lg ">
-                <Badge color="warning" size="xl">
+                <Badge color="info" size="xl">
                   Android Studio
                 </Badge>
-                <Badge color="warning" size="xl">
+                <Badge color="info" size="xl">
                   Java
                 </Badge>
               </div>

@@ -16,7 +16,7 @@ import {ShowPlane} from "./components/ShowPlane.jsx"
 import {ShowCessna} from "./components/ShowCessna.jsx"
 import {ShowCloud} from "./components/ShowCloud.jsx"
 import { Cloud, Plane } from '@react-three/drei';
-
+import "./styles.scss";
 
 ReactGA.initialize("G-300CPG4KSC");
 
@@ -26,6 +26,49 @@ function App() {
     testRef.current.scrollIntoView({
       behavior: "smooth",
     });
+
+  
+    
+ 
+    
+
+    window.onload = function() {
+      const title = document.querySelector('.error_title');
+
+      if (title) {
+        // your code for mousemove event handlers
+      }
+      else {
+        console.log('Title element not found.');
+      }
+    
+      document.onmousemove = function(e) {
+        let x = e.pageX - window.innerWidth/2;
+        let y = e.pageY - window.innerHeight/2;
+        
+        title.style.setProperty('--x', x + 'px')
+        title.style.setProperty('--y', y + 'px')
+      }
+      
+      ////////////// Shadow ///////////////////
+      title.onmousemove = function(e) {
+        let x = e.pageX - window.innerWidth/2;
+        let y = e.pageY - window.innerHeight/2;
+      
+        let rad = Math.atan2(y, x).toFixed(2); 
+        let length = Math.round(Math.sqrt((Math.pow(x,2))+(Math.pow(y,2)))/20); 
+      
+        let x_shadow = Math.round(length * Math.cos(rad));
+        let y_shadow = Math.round(length * Math.sin(rad));
+      
+        title.style.setProperty('--x-shadow', - x_shadow + 'px')
+        title.style.setProperty('--y-shadow', - y_shadow + 'px')
+      
+      }
+    }
+    
+//////// Light //////////
+
  /*
     propeller spinning
     clouds
@@ -81,14 +124,23 @@ function App() {
     className="avatar"
   /> */}
 
+{/* // ring-1 ring-gray-300 dark:ring-gray-500 */}
 
-<img class="rounded ring-1 ring-gray-300 dark:ring-gray-500" src="https://media.licdn.com/dms/image/C5603AQFvg932RnYBeA/profile-displayphoto-shrink_800_800/0/1652957459745?e=1681948800&v=beta&t=uoBGBZrhdRi_3AazlZPpWc6BFgO9o67wJQwBiotH1WY" alt="Default avatar">
+
+<img class="rounded" src="https://i.ibb.co/V9Hfgqm/TM-Pic-Re-Size.jpg" alt="Default avatar">
 </img> 
 
 </div>
       </header>
         <header className="App-header">
-        Tomer Shmul</header>
+        <section class="error_section">
+      
+      <h1 class="error_title">
+        
+        Tomer Shmul
+      </h1>
+    </section>
+        </header>
         <div className="App-header2">
           <Typewriter
             options={{
