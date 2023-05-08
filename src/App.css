@@ -28,6 +28,8 @@
   display: flex;
 }
 
+
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -293,7 +295,7 @@
 @media screen and (max-width: 770px) {
   .App {
     padding: 20px;
-    padding-top: 25vh;
+    padding-top: 15vh;
   }
   .icons {
     font-size: 3rem;
@@ -306,6 +308,7 @@
   }
 
   .avatar {
+    
     width: 80px;
     height: 80px;
     
