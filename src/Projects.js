@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Timeline, Button, Card, Badge } from "flowbite-react";
+import { Timeline, Button, Card, Badge, Modal } from "flowbite-react";
 import { FaGithub } from "react-icons/fa";
 import { HiHand } from "react-icons/hi";
 import {
@@ -9,11 +9,14 @@ import {
   HiBriefcase,
   HiLightBulb,
   HiBeaker,
+  HiTerminal,
 } from "react-icons/hi";
 import { createTheme } from "@mui/material/styles";
 
 const Projects = () => {
   const font = "'Rubik', sans-serif";
+
+  const [show, setShow] = React.useState(false);
 
   const theme = createTheme({
     typography: {
@@ -41,6 +44,25 @@ const Projects = () => {
 
   return (
     <div className="proj">
+      <Modal show={show} onClose={() => setShow(false)}>
+        <Modal.Header>Terms of Service</Modal.Header>
+        <Modal.Body>
+          <div className="space-y-6">
+            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+              With less than a month to go before the European Union enacts new
+              consumer privacy laws for its citizens, companies around the world
+              are updating their terms of service agreements to comply.
+            </p>
+            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+              The European Union’s General Data Protection Regulation (G.D.P.R.)
+              goes into effect on May 25 and is meant to ensure a common set of
+              data rights in the European Union. It requires organizations to
+              notify users as soon as possible of high-risk data breaches that
+              could personally affect them.
+            </p>
+          </div>
+        </Modal.Body>
+      </Modal>
       <div id="stars"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
@@ -67,6 +89,16 @@ const Projects = () => {
                         BS in Computer Science
                       </Badge>
                       <Badge color="dark" icon={HiArrowSmRight}>
+                        Concentration in{" "}
+                        <div className="inline text-sky-700 font-extrabold">
+                          Artificial Intelligence
+                        </div>{" "}
+                        and{" "}
+                        <div className="inline text-sky-700 font-extrabold">
+                          Modeling & Simulation
+                        </div>
+                      </Badge>
+                      <Badge color="dark" icon={HiArrowSmRight}>
                         Minor in Technology & Manangement
                       </Badge>
                     </div>
@@ -83,8 +115,50 @@ const Projects = () => {
 
                   <Timeline.Body>
                     <div className="flex flex-wrap items-end gap-2 ">
+                      <div className="flex flex-wrap items-end gap-2 ">
+                        <Badge color="pink" size="sm">
+                          <div className="flex flex-wrap items-end gap-2 ">
+                            Software Engineer Intern at{" "}
+                            <img
+                              alt="Capital One"
+                              height={10}
+                              width={50}
+                              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Capital_One_logo.svg/2560px-Capital_One_logo.svg.png"
+                            />
+                          </div>
+                        </Badge>
+                        <Timeline.Time>2023</Timeline.Time>
+                      </div>
+                      <div className="flex flex-wrap items-end gap-2 ">
+                        <Badge color="pink" size="sm">
+                          <div className="flex flex-wrap items-end gap-2 ">
+                            Data Science Intern at{" "}
+                            <img
+                              alt="InSite Group"
+                              height={10}
+                              width={50}
+                              src="https://i.ibb.co/BGBQdkv/Insite-Photo-Room-png-Photo-Room-1.png"
+                            />
+                          </div>
+                        </Badge>
+                        <Timeline.Time>2020</Timeline.Time>
+                      </div>
+                    </div>
+                  </Timeline.Body>
+                </Timeline.Content>
+              </Timeline.Item>
+              <Timeline.Item>
+                <Timeline.Point />
+                <Timeline.Content>
+                  <Timeline.Title className="flex items-center pb-1">
+                    <HiBeaker />
+                    &nbsp;Extracurriculars
+                  </Timeline.Title>
+
+                  <Timeline.Body>
+                    <div className="flex flex-wrap items-end gap-2 ">
                       <Badge color="purple" size="sm">
-                        Data Structures & Algorithms TA
+                        Data Structures & Algorithms Teaching Assistant
                       </Badge>
                       <Badge color="purple" size="sm">
                         Software Developer - Bits of Good
@@ -101,11 +175,12 @@ const Projects = () => {
                 <Timeline.Content>
                   <Timeline.Body>
                     <Timeline.Title className="flex items-center pb-1">
-                      <HiBeaker />
+                      <HiLightBulb />
                       &nbsp;Interests
                     </Timeline.Title>
                     <div className="flex flex-wrap items-end gap-2 ">
                       <Badge color="pink" size="sm">
+                        {/* onClick={() => setShow(!show)} */}
                         Flying Planes & Helicopters 🚁
                       </Badge>
                       <Badge color="pink" size="sm">
@@ -123,7 +198,7 @@ const Projects = () => {
                 <Timeline.Point />
                 <Timeline.Content>
                   <Timeline.Title className="flex items-center pb-1">
-                    <HiLightBulb />
+                    <HiTerminal />
                     &nbsp;Skills
                   </Timeline.Title>
                   <Timeline.Body className="">
@@ -190,8 +265,9 @@ const Projects = () => {
                 Talk GT
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-                Forum for Georgia Tech students to create accounts, submit
-                posts, reply and vote on others, and resolve threads on request.
+                Social media for Georgia Tech students to create accounts,
+                submit posts, reply and vote on others, and resolve threads on
+                request.
               </p>
               <div className="flex flex-wrap gap-2 max-w-lg ">
                 <Badge color="info" size="xl">
@@ -239,8 +315,8 @@ const Projects = () => {
                 Volunteer Management System
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-                Developing a portal to manage events, attendance, rewards,
-                and more for several non-profit organizations.
+                Developing a portal to manage events, attendance, rewards, and
+                more for several non-profit organizations.
               </p>
               <div className="flex flex-wrap gap-2 max-w-lg ">
                 <Badge color="purple" size="xl">
@@ -283,7 +359,8 @@ const Projects = () => {
                 River Sediment Satellite Detection
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-                Developed script to detect water in satellite imagery through clustering and overlay sediment metrics.
+                Developed script to detect water in satellite imagery through
+                clustering and overlay sediment metrics.
               </p>
               <div className="flex flex-wrap gap-2 max-w-lg ">
                 <Badge color="info" size="xl">
@@ -294,7 +371,7 @@ const Projects = () => {
                 </Badge>
               </div>
               <div className="flex flex-wrap gap-2 max-w-lg ">
-              <Button
+                <Button
                   outline={true}
                   gradientDuoTone="cyanToBlue"
                   href="https://devpost.com/software/impact-of-river-pollution"
@@ -328,11 +405,9 @@ const Projects = () => {
                 Stock Portfolio Optimization
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-              Built a stock beginner-friendly portfolio
-                        creation tool for the HackGT hackathon. Uses
-                        mean-variance optimization to determine
-                        investment with low risk based on past market
-                        volatility.
+                Built a stock beginner-friendly portfolio creation tool for the
+                HackGT hackathon. Uses mean-variance optimization to determine
+                investment with low risk based on past market volatility.
               </p>
               <div className="flex flex-wrap gap-2 max-w-lg ">
                 <Badge color="indigo" size="xl">
@@ -346,7 +421,7 @@ const Projects = () => {
                 </Badge>
               </div>
               <div className="flex flex-wrap gap-2 max-w-lg ">
-              <Button
+                <Button
                   outline={true}
                   gradientDuoTone="cyanToBlue"
                   href="https://devpost.com/software/stockify-i9n674"
@@ -380,9 +455,9 @@ const Projects = () => {
                 Hive Defense Game
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-              Android game where players place and upgrade defending
-                        or supporting towers to protect their hive against
-                        waves of enemies and a final boss.
+                Android game where players place and upgrade defending or
+                supporting towers to protect their hive against waves of enemies
+                and a final boss.
               </p>
               <div className="flex flex-wrap gap-2 max-w-lg ">
                 <Badge color="info" size="xl">
@@ -393,7 +468,7 @@ const Projects = () => {
                 </Badge>
               </div>
               <div className="flex flex-wrap gap-2 max-w-lg ">
-              <Button
+                <Button
                   outline={true}
                   gradientDuoTone="cyanToBlue"
                   href="https://drive.google.com/file/d/1Br5IE7uFe2fgmtrCi2HyVAF25e1YAu-n/view"

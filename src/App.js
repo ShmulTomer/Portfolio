@@ -27,10 +27,6 @@ function App() {
       behavior: "smooth",
     });
 
-  
-    
- 
-    
 
     window.onload = function() {
       const title = document.querySelector('.error_title');
