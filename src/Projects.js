@@ -315,7 +315,9 @@ const Projects = () => {
                 Data Structure & Algorithms Visualization Tool
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-                Developing and maintaining an open-source tool to help students visualize and comprehend data structures covered in Georgia Tech's DS&A course
+                Developing and maintaining an open-source tool to help students
+                visualize and comprehend data structures covered in Georgia
+                Tech's DS&A course
               </p>
               <div className="flex flex-wrap gap-2 max-w-lg ">
                 <Badge color="info" size="xl">
