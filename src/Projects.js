@@ -308,7 +308,7 @@ const Projects = () => {
           <div className="outerCard">
             <Card
               horizontal={true}
-              imgSrc="https://i.ibb.co/NT2q20f/Screen-Shot-2023-06-22-at-1-59-31-PM.png" alt="Screen-Shot-2023-06-22-at-1-59-31-PM"
+              imgSrc="https://i.ibb.co/kSxpQZm/Screen-Shot-2023-06-22-at-2-12-02-PM.png"
               className="innerCard"
             >
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
