@@ -152,7 +152,7 @@ const Projects = () => {
                 <Timeline.Content>
                   <Timeline.Title className="flex items-center pb-1">
                     <HiBeaker />
-                    &nbsp;Extracurriculars
+                    &nbsp;Extracurricular
                   </Timeline.Title>
 
                   <Timeline.Body>
@@ -308,6 +308,51 @@ const Projects = () => {
           <div className="outerCard">
             <Card
               horizontal={true}
+              imgSrc="https://i.ibb.co/NT2q20f/Screen-Shot-2023-06-22-at-1-59-31-PM.png" alt="Screen-Shot-2023-06-22-at-1-59-31-PM"
+              className="innerCard"
+            >
+              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Data Structure & Algorithms Visualization Tool
+              </h5>
+              <p className="font-normal text-gray-700 dark:text-gray-400">
+                Developing and maintaining an open-source tool to help students visualize and comprehend data structures covered in Georgia Tech's DS&A course
+              </p>
+              <div className="flex flex-wrap gap-2 max-w-lg ">
+                <Badge color="info" size="xl">
+                  React
+                </Badge>
+                <Badge color="info" size="xl">
+                  JavaScript ES6
+                </Badge>
+              </div>
+              <div className="flex flex-wrap gap-2 max-w-lg ">
+                <Button
+                  outline={true}
+                  gradientDuoTone="cyanToBlue"
+                  href="https://csvistool.com/"
+                  target="_blank"
+                >
+                  <div className="flex items-center gap-0.5">
+                    <HiHand className="mr-2 h-4 w-4"></HiHand>Demo
+                  </div>
+                </Button>
+                <Button
+                  outline={true}
+                  gradientDuoTone="purpleToPink"
+                  href="https://github.com/RodrigoDLPontes/visualization-tool"
+                  target="_blank"
+                >
+                  <div className="flex items-center gap-0.5">
+                    <FaGithub className="mr-2 h-4 w-4"></FaGithub>GitHub
+                  </div>
+                </Button>
+              </div>
+            </Card>
+          </div>
+
+          <div className="outerCard">
+            <Card
+              horizontal={true}
               imgSrc="https://i.ibb.co/jL55NxY/My-project-1.png"
               className="innerCard"
             >
@@ -315,8 +360,8 @@ const Projects = () => {
                 Volunteer Management System
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-                Developing a portal to manage events, attendance, rewards, and
-                more for several non-profit organizations.
+                Developed a portal to manage events, attendance, rewards, and
+                more for several non-profit organizations in Atlanta.
               </p>
               <div className="flex flex-wrap gap-2 max-w-lg ">
                 <Badge color="purple" size="xl">
