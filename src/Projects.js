@@ -115,6 +115,20 @@ const Projects = () => {
 
                   <Timeline.Body>
                     <div className="flex flex-wrap items-end gap-2 ">
+                    <div className="flex flex-wrap items-end gap-2 ">
+                        <Badge color="pink" size="sm">
+                          <div className="flex flex-wrap items-center gap-2">
+                            Software Engineer Intern at{" "}
+                            <img
+                              alt="Citadel"
+                              height={30}
+                              width={70}
+                              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Citadel_LLC_Logo.svg/2560px-Citadel_LLC_Logo.svg.png"
+                            />
+                          </div>
+                        </Badge>
+                        <Timeline.Time>2024</Timeline.Time>
+                      </div>
                       <div className="flex flex-wrap items-end gap-2 ">
                         <Badge color="pink" size="sm">
                           <div className="flex flex-wrap items-end gap-2 ">
@@ -188,6 +202,9 @@ const Projects = () => {
                       </Badge>
                       <Badge color="pink" size="sm">
                         Electric Skateboarding 🛹
+                      </Badge>
+                      <Badge color="pink" size="sm">
+                        Woodworking 🪚
                       </Badge>
                     </div>
                   </Timeline.Body>

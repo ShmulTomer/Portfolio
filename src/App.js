@@ -6,16 +6,16 @@ import {
   FaEnvelopeSquare,
   FaGithubSquare
 } from "react-icons/fa";
-import { Avatar } from "flowbite-react";
+// import { Avatar } from "flowbite-react";
 import Typewriter from "typewriter-effect";
 import Projects from "./Projects";
 import { useRef } from "react";
 import ScrollUpButton from "react-scroll-up-button";
 import ReactGA from "react-ga";
-import {ShowPlane} from "./components/ShowPlane.jsx"
-import {ShowCessna} from "./components/ShowCessna.jsx"
-import {ShowCloud} from "./components/ShowCloud.jsx"
-import { Cloud, Plane } from '@react-three/drei';
+// import {ShowPlane} from "./components/ShowPlane.jsx"
+// import {ShowCessna} from "./components/ShowCessna.jsx"
+// import {ShowCloud} from "./components/ShowCloud.jsx"
+// import { Cloud, Plane } from '@react-three/drei';
 import "./styles.scss";
 
 ReactGA.initialize("G-300CPG4KSC");
