@@ -10,6 +10,7 @@ import {
   HiLightBulb,
   HiBeaker,
   HiTerminal,
+  HiChevronRight,
 } from "react-icons/hi";
 import { createTheme } from "@mui/material/styles";
 
@@ -85,22 +86,20 @@ const Projects = () => {
                       <Badge color="info" size="sm" className="w-64">
                         Georgia Institute of Technology
                       </Badge>
+                      <Badge color="dark" icon={HiChevronRight}>
+                        <b>MS in <div className="inline text-sky-700 font-extrabold">Machine Learning</div></b>&nbsp;&nbsp;&nbsp;<Timeline.Time>Graduating 2025</Timeline.Time>
+                      </Badge>
+                      <Badge color="dark" icon={HiChevronRight}>
+                        <b>BS in <div className="inline text-sky-700 font-extrabold">Computer Science</div></b>&nbsp;&nbsp;&nbsp;<Timeline.Time>2024</Timeline.Time>
+                      </Badge>
+                      <div className="ml-6">
                       <Badge color="dark" icon={HiArrowSmRight}>
-                        BS in Computer Science
+                        Concentration in Artifical Intelligence & Modeling/Simulation
                       </Badge>
                       <Badge color="dark" icon={HiArrowSmRight}>
-                        Concentration in{" "}
-                        <div className="inline text-sky-700 font-extrabold">
-                          Artificial Intelligence
-                        </div>{" "}
-                        and{" "}
-                        <div className="inline text-sky-700 font-extrabold">
-                          Modeling & Simulation
-                        </div>
+                        Minor in Business thru the Denning Technology & Management program
                       </Badge>
-                      <Badge color="dark" icon={HiArrowSmRight}>
-                        Minor in Technology & Manangement
-                      </Badge>
+                    </div>
                     </div>
                   </Timeline.Body>
                 </Timeline.Content>
@@ -115,6 +114,20 @@ const Projects = () => {
 
                   <Timeline.Body>
                     <div className="flex flex-wrap items-end gap-2 ">
+                    <div className="flex flex-wrap items-end gap-2 ">
+                        <Badge color="pink" size="sm">
+                          <div className="flex flex-wrap items-center gap-2">
+                            Software Engineer at{" "}
+                            <img
+                              alt="Citadel"
+                              height={30}
+                              width={70}
+                              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Citadel_LLC_Logo.svg/2560px-Citadel_LLC_Logo.svg.png"
+                            />
+                          </div>
+                        </Badge>
+                        <Timeline.Time>Starting 2025</Timeline.Time>
+                      </div>
                     <div className="flex flex-wrap items-end gap-2 ">
                         <Badge color="pink" size="sm">
                           <div className="flex flex-wrap items-center gap-2">
@@ -171,6 +184,12 @@ const Projects = () => {
 
                   <Timeline.Body>
                     <div className="flex flex-wrap items-end gap-2 ">
+                    <Badge color="purple" size="sm">
+                        Prototyping Instructor - Invention Studio
+                      </Badge>
+                      <Badge color="purple" size="sm">
+                        Automata & Complexity Teaching Assistant
+                      </Badge>
                       <Badge color="purple" size="sm">
                         Data Structures & Algorithms Teaching Assistant
                       </Badge>
@@ -180,6 +199,10 @@ const Projects = () => {
                       <Badge color="purple" size="sm">
                         Board Member - Startup Exchange
                       </Badge>
+                      <Badge color="purple" size="sm">
+                        Yellow Jacket Flying Club
+                      </Badge>
+                      
                     </div>
                   </Timeline.Body>
                 </Timeline.Content>
@@ -242,6 +265,12 @@ const Projects = () => {
                         Node
                       </Badge>
                       <Badge color="purple" size="sm">
+                        Kubernetes
+                      </Badge>
+                      <Badge color="purple" size="sm">
+                        Terraform
+                      </Badge>
+                      <Badge color="purple" size="sm">
                         MongoDB
                       </Badge>
                       <Badge color="purple" size="sm">
@@ -249,6 +278,9 @@ const Projects = () => {
                       </Badge>
                       <Badge color="pink" size="sm">
                         AWS
+                      </Badge>
+                      <Badge color="pink" size="sm">
+                        Google Cloud
                       </Badge>
                       <Badge color="pink" size="sm">
                         Docker
@@ -329,7 +361,7 @@ const Projects = () => {
               className="innerCard"
             >
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Data Structure & Algorithms Visualization Tool
+                Data Structures & Algorithms Visualization Tool
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
                 Developing and maintaining an open-source tool to help students
@@ -359,6 +391,51 @@ const Projects = () => {
                   outline={true}
                   gradientDuoTone="purpleToPink"
                   href="https://github.com/RodrigoDLPontes/visualization-tool"
+                  target="_blank"
+                >
+                  <div className="flex items-center gap-0.5">
+                    <FaGithub className="mr-2 h-4 w-4"></FaGithub>GitHub
+                  </div>
+                </Button>
+              </div>
+            </Card>
+          </div>
+          <div className="outerCard">
+            <Card
+              horizontal={true}
+              imgSrc="https://i.ibb.co/4MHbq2B/Screenshot-2024-11-28-at-5-17-48-PM.png"
+              className="innerCard"
+            >
+              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Automata & FSM Designer
+              </h5>
+              <p className="font-normal text-gray-700 dark:text-gray-400">
+                Developed an open-source tool for students in Georgia Tech's Automata & Complexity course 
+                to design, visualize, and export Finite State Machines and other types of automata
+              </p>
+              <div className="flex flex-wrap gap-2 max-w-lg ">
+                <Badge color="info" size="xl">
+                  React
+                </Badge>
+                <Badge color="info" size="xl">
+                  JavaScript
+                </Badge>
+              </div>
+              <div className="flex flex-wrap gap-2 max-w-lg ">
+                <Button
+                  outline={true}
+                  gradientDuoTone="cyanToBlue"
+                  href="https://drawautomata.xyz/"
+                  target="_blank"
+                >
+                  <div className="flex items-center gap-0.5">
+                    <HiHand className="mr-2 h-4 w-4"></HiHand>Demo
+                  </div>
+                </Button>
+                <Button
+                  outline={true}
+                  gradientDuoTone="purpleToPink"
+                  href="https://github.com/ShmulTomer/automata"
                   target="_blank"
                 >
                   <div className="flex items-center gap-0.5">

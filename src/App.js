@@ -143,7 +143,7 @@ function App() {
               strings: [
                 "Georgia Tech Student",
                 "Plane & Helicopter Pilot",
-                "Data Structures & Algos TA",
+                "Automata & Complexity TA",
                 "Software Engineer",
               ],
               autoStart: true,
@@ -158,16 +158,16 @@ function App() {
           
         </div>
         <div className="icons">
-          <a className="icon" href="https://www.linkedin.com/in/tomer-shmul/">
+          <a className="icon" href="https://www.linkedin.com/in/tomer-shmul/" target="_blank">
             <FaLinkedin />
           </a>
           <a
             className="icon"
-            href="mailto:tshmul@gatech.edu?subject=Hey%20Tomer!"
+            href="mailto:shmul.tomer@gmail.com?subject=Hey%20Tomer!" target="_blank"
           >
             <FaEnvelopeSquare />
           </a>
-          <a className="icon" href="https://github.com/ShmulTomer/">
+          <a className="icon" href="https://github.com/ShmulTomer/" target="_blank">
             <FaGithubSquare />
           </a>
         </div>
