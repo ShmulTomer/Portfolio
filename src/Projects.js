@@ -82,27 +82,32 @@ const Projects = () => (
         </Reveal>
         <Reveal delay={80}>
           <div className="edu-block">
-            <p className="edu-school">Georgia Institute of Technology</p>
+            <div className="edu-school-header">
+              <img src="/logos/georgia-tech.png" alt="Georgia Tech" className="edu-school-logo" />
+              <p className="edu-school">Georgia Institute of Technology</p>
+            </div>
             <div className="edu-degrees">
               <div className="edu-degree-row">
                 <div className="edu-degree-left">
                   <span className="edu-degree-title">MS in Computer Science</span>
-                  <span className="edu-degree-conc">Concentration: Machine Learning</span>
+                  <div className="edu-detail-grid">
+                    <span className="edu-detail-label">Concentration</span>
+                    <span className="edu-detail-value">Machine Learning</span>
+                  </div>
                 </div>
                 <span className="edu-year">2025</span>
               </div>
               <div className="edu-degree-row">
                 <div className="edu-degree-left">
                   <span className="edu-degree-title">BS in Computer Science</span>
-                  <span className="edu-degree-conc">
-                    Concentration: Artificial Intelligence &amp; Modeling and Simulation
-                  </span>
-                  <span className="edu-degree-minor">
-                    Minor: Denning Technology and Management Program
-                  </span>
-                  <span className="edu-degree-minor">
-                    Study Abroad, Universitat Politècnica de Catalunya (UPC), Barcelona
-                  </span>
+                  <div className="edu-detail-grid">
+                    <span className="edu-detail-label">Concentrations</span>
+                    <span className="edu-detail-value">Artificial Intelligence<br />Modeling and Simulation</span>
+                    <span className="edu-detail-label">Minor</span>
+                    <span className="edu-detail-value">Denning Technology and Management Program</span>
+                    <span className="edu-detail-label">Study Abroad</span>
+                    <span className="edu-detail-value">Universitat Politècnica de Catalunya (UPC), Barcelona</span>
+                  </div>
                 </div>
                 <span className="edu-year">2024</span>
               </div>
