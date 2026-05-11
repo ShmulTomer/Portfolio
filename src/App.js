@@ -17,11 +17,13 @@ function App() {
           <rect width="100%" height="100%" filter="url(#noise)" />
         </svg>
         <div className="hero-content">
-          <img
-            className="hero-avatar"
-            src="https://i.ibb.co/V9Hfgqm/TM-Pic-Re-Size.jpg"
-            alt="Tomer Shmul"
-          />
+          <div className="hero-avatar-wrap">
+            <img
+              className="hero-avatar"
+              src="https://i.ibb.co/V9Hfgqm/TM-Pic-Re-Size.jpg"
+              alt="Tomer Shmul"
+            />
+          </div>
           <h1 className="hero-name">Tomer Shmul</h1>
           <p className="hero-role">Software Engineer at Citadel</p>
           <div className="hero-links">

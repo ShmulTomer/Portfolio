@@ -77,21 +77,29 @@
   animation: fadeUp 0.9s ease both;
 }
 
-.hero-avatar {
+.hero-avatar-wrap {
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.2);
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
   margin-bottom: 8px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+}
+
+.hero-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.12) translateY(8px);
 }
 
 .hero-name {
   font-family: Inter, sans-serif;
   font-size: clamp(3rem, 7.5vw, 5.5rem);
   font-weight: 700;
-  background: linear-gradient(135deg, #3730a3, #1d4ed8, #0369a1);
+  background: linear-gradient(135deg, #1e1b4b, #3730a3, #1d4ed8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
