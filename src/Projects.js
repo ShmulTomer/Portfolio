@@ -31,7 +31,7 @@ function Reveal({ children, delay = 0 }) {
 const EXPERIENCE = [
   {
     company: "Citadel",
-    role: "Software Engineer",
+    role: "Software Engineer, EQR Platform Engineering",
     period: "2025 – Present",
     logo: "/logos/citadel.png",
   },
@@ -66,7 +66,7 @@ const Projects = () => (
                 <div className="exp-info">
                   <span className="exp-company">{job.company}</span>
                   <span className="exp-role">{job.role}</span>
-                  <span className="exp-period">{job.period}</span>
+<span className="exp-period">{job.period}</span>
                 </div>
               </div>
             </Reveal>

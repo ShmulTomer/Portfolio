@@ -9,11 +9,13 @@ function App() {
   return (
     <>
       <div className="hero">
-        <div className="mesh-bg">
-          <div className="blob blob-1" />
-          <div className="blob blob-2" />
-          <div className="blob blob-3" />
-        </div>
+        <svg className="hero-noise" xmlns="http://www.w3.org/2000/svg">
+          <filter id="noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#noise)" />
+        </svg>
         <div className="hero-content">
           <img
             className="hero-avatar"
@@ -22,9 +24,6 @@ function App() {
           />
           <h1 className="hero-name">Tomer Shmul</h1>
           <p className="hero-role">Software Engineer at Citadel</p>
-          <p className="hero-sub">
-            Georgia Tech BS CS '24 &middot; MS CS '25 &middot; Licensed Pilot &amp; Skydiver
-          </p>
           <div className="hero-links">
             <a
               href="https://www.linkedin.com/in/tomer-shmul/"
