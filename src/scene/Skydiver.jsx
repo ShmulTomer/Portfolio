@@ -12,6 +12,7 @@ import {
   figurePosition,
   sample,
   sampleNumber,
+  seatSway,
   seg,
 } from "../lib/timeline";
 
@@ -91,9 +92,13 @@ export default function Skydiver() {
     }
 
     const position = figurePosition(p);
-    root.current.position.set(position.x, position.y, position.z);
+    const sway = seatSway(p, time);
+    root.current.position.set(position.x + sway.x, position.y + sway.y, position.z);
     const spin = Math.sin(p * 7.5) * 0.4 * seg(p, 0.15, 0.26) * (1 - seg(p, 0.55, 0.85));
     root.current.rotation.y = sampleNumber(YAW_TRACK, p) + spin;
+    // ZYX so the ride's roll is applied outside his yaw, keeping it about the
+    // same axis the airframe rocks on rather than his own fore-aft axis.
+    root.current.rotation.z = sway.roll;
     const pitch = sampleNumber(PITCH_TRACK, p);
     body.current.rotation.x = pitch;
 
@@ -152,7 +157,7 @@ export default function Skydiver() {
   });
 
   return (
-    <group ref={root}>
+    <group ref={root} rotation-order="ZYX">
       <group ref={body}>
         {JOINT_NAMES.map((name, i) =>
           JOINT_RADIUS[name] ? (

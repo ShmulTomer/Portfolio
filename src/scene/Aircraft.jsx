@@ -2,7 +2,7 @@ import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { scroll } from "../lib/scroll";
 import { loftGeometry, loopGeometry } from "../lib/loft";
-import { COCKPIT_LOCAL, EXIT_P, aircraftPosition, seg } from "../lib/timeline";
+import { COCKPIT_LOCAL, EXIT_P, aircraftPosition, rideRoll, seg } from "../lib/timeline";
 
 // Cessna 172. Nose points down -x, tail runs to +x, so the left seat the pilot
 // flies from is the +z side and his door opens straight at the camera.
@@ -169,7 +169,7 @@ export default function Aircraft() {
 
     const pos = aircraftPosition(p);
     group.current.position.set(pos.x, pos.y, pos.z);
-    group.current.rotation.z = Math.sin(clock.elapsedTime * 0.6) * 0.025;
+    group.current.rotation.z = rideRoll(p, clock.elapsedTime);
     group.current.rotation.y = -away * 0.12;
 
     // Same drive as the helicopter's rotor: scroll turns it, and the small time

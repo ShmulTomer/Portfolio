@@ -2,7 +2,7 @@ import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { scroll } from "../lib/scroll";
 import { loftGeometry, loopGeometry } from "../lib/loft";
-import { COCKPIT_LOCAL, EXIT_P, aircraftPosition, seg } from "../lib/timeline";
+import { COCKPIT_LOCAL, EXIT_P, aircraftPosition, rideRoll, seg } from "../lib/timeline";
 
 // Robinson R22. Nose points down -x, tailboom runs to +x. Cylinders are rotated
 // so their axis follows x, which puts radiusTop forward.
@@ -129,7 +129,7 @@ export default function Helicopter() {
 
     const pos = aircraftPosition(p);
     group.current.position.set(pos.x, pos.y, pos.z);
-    group.current.rotation.z = Math.sin(clock.elapsedTime * 0.6) * 0.02;
+    group.current.rotation.z = rideRoll(p, clock.elapsedTime);
     group.current.rotation.y = -away * 0.12;
 
     // Scroll drives the rotors; the small time term keeps them from looking

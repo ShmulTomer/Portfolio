@@ -151,3 +151,34 @@ export function figurePosition(p, out = _figure) {
   out.z = plane.z + mix(COCKPIT_LOCAL[2], DOOR_LOCAL[2], t);
   return out;
 }
+
+// The gentle rock both rides share. Keeping it here rather than in each ride
+// lets the figure aboard be carried by exactly the same motion. It levels off
+// as he moves to the door, the way a pilot flies straight on jump run, which
+// also parks the door exactly on the world origin for the exit.
+export function rideRoll(p, time) {
+  return Math.sin(time * 0.6) * 0.025 * (1 - smooth(seg(p, 0.06, EXIT_P)));
+}
+
+const _seat = { x: 0, y: 0, roll: 0 };
+
+// Displacement the ride's roll imparts to whoever is sitting in it. The rides
+// rock about their own origin, so a seat out at the cockpit swings through an
+// arc rather than staying put, and the figure has to swing with it or he floats
+// free of the airframe.
+export function seatSway(p, time, out = _seat) {
+  out.x = 0;
+  out.y = 0;
+  out.roll = 0;
+  if (p >= EXIT_P) return out;
+
+  const t = smooth(seg(p, 0.06, EXIT_P));
+  out.roll = rideRoll(p, time);
+  const lx = mix(COCKPIT_LOCAL[0], DOOR_LOCAL[0], t);
+  const ly = mix(COCKPIT_LOCAL[1], DOOR_LOCAL[1], t);
+  const c = Math.cos(out.roll);
+  const s = Math.sin(out.roll);
+  out.x = lx * c - ly * s - lx;
+  out.y = lx * s + ly * c - ly;
+  return out;
+}
