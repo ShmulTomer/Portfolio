@@ -2,6 +2,7 @@ import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { BONES, JOINT_INDEX, JOINT_NAMES, JOINT_RADIUS, POSES } from "../lib/skeleton";
+import { canopyAttachments, canopyGeometry } from "../lib/loft";
 import { scroll } from "../lib/scroll";
 import {
   PITCH_TRACK,
@@ -23,13 +24,11 @@ const mid = new THREE.Vector3();
 // Joints that flutter in the airstream during freefall.
 const FLUTTER = { handL: 1, handR: 1, footL: 0.8, footR: 0.8, kneeL: 0.4, kneeR: 0.4 };
 
-// Canopy rim, in the canopy's own unscaled space.
+// How high the canopy flies above the shoulders, in its own unscaled space.
 const RIM_Y = 3.3;
-const RIM_X = 2.4;
-const RIM_Z = 1.15;
-// Where each suspension line meets the fabric, as angles around the rim.
-const LINE_ANGLES = [100, 128, 156, 204, 232, 260].map((d) => (d * Math.PI) / 180);
-const LINES_PER_SIDE = LINE_ANGLES.length + 1; // canopy lines plus one riser
+// Attachment points on the +x half of the bottom skin; mirrored per side.
+const ATTACHMENTS = canopyAttachments();
+const LINES_PER_SIDE = ATTACHMENTS.length + 1; // canopy lines plus one riser
 const LINE_COUNT = LINES_PER_SIDE * 2;
 
 // Risers rise from the shoulders to a confluence just above them, which is also
@@ -46,6 +45,7 @@ export default function Skydiver() {
   const jointRefs = useRef([]);
   const boneRefs = useRef([]);
   const pose = useMemo(() => new Float32Array(JOINT_NAMES.length * 3), []);
+  const canopyShape = useMemo(() => canopyGeometry(), []);
 
   const lineGeometry = useMemo(() => {
     const geometry = new THREE.BufferGeometry();
@@ -135,10 +135,10 @@ export default function Skydiver() {
         array[n++] = riserY;
         array[n++] = riserZ;
 
-        for (const angle of LINE_ANGLES) {
-          const rx = Math.cos(angle) * RIM_X * chute.span * -side;
-          const ry = RIM_Y * chute.lift;
-          const rz = Math.sin(angle) * RIM_Z * chute.span;
+        for (const [ax, ay, az] of ATTACHMENTS) {
+          const rx = ax * side * chute.span;
+          const ry = (RIM_Y + ay) * chute.lift;
+          const rz = az * chute.span;
           array[n++] = sx;
           array[n++] = riserY;
           array[n++] = riserZ;
@@ -175,10 +175,9 @@ export default function Skydiver() {
       </lineSegments>
 
       <group ref={canopy} visible={false}>
-        <mesh position={[0, RIM_Y, 0]} scale={[RIM_X, 0.82, RIM_Z]}>
-          <sphereGeometry args={[1, 22, 8, 0, Math.PI * 2, 0, Math.PI * 0.5]} />
-          <meshBasicMaterial ref={canopyMaterial} wireframe color="#ffffff" transparent opacity={0.9} />
-        </mesh>
+        <lineSegments position={[0, RIM_Y, 0]} geometry={canopyShape} frustumCulled={false}>
+          <lineBasicMaterial ref={canopyMaterial} color="#ffffff" transparent opacity={0.9} />
+        </lineSegments>
       </group>
     </group>
   );
