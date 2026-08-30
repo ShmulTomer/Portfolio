@@ -5,42 +5,47 @@ import { scroll } from "../lib/scroll";
 import { altitude, drift, mix, sample } from "../lib/timeline";
 
 // [scrollPosition, [offsetX, offsetY, offsetZ, lookAtHeight, lookAtDepth]]
+// Offsets are relative to the figure, so the camera never lags behind the fall.
+// Face-down poses sit low and stretch along +z, so their look target drops and
+// pushes forward to keep the body centred.
 const CAMERA_TRACK = [
   [0.0, [5.4, 1.6, 6.8, 1.0, 0]],
-  [0.13, [3.8, 1.1, 5.4, 1.0, 0]],
-  [0.28, [2.5, 0.9, 4.4, 0.9, 0]],
-  [0.42, [2.1, 0.5, 3.8, 0.9, 0]],
-  [0.53, [5.2, 2.4, 8.2, 2.3, 0]],
-  [0.72, [5.8, 1.7, 8.8, 2.0, 0]],
-  [0.88, [3.4, 1.1, 5.4, 1.0, 0]],
+  [0.13, [3.8, 1.1, 5.4, 0.95, 0.1]],
+  [0.22, [3.2, 0.85, 4.8, 0.5, 0.45]],
+  [0.3, [2.9, 0.7, 4.5, 0.28, 0.75]],
+  [0.42, [2.7, 0.6, 4.3, 0.28, 0.8]],
+  [0.47, [3.5, 1.0, 5.3, 0.6, 0.5]],
+  [0.55, [5.2, 2.2, 8.0, 2.1, 0]],
+  [0.72, [5.8, 1.6, 8.6, 1.9, 0]],
+  [0.88, [3.4, 1.1, 5.4, 1.0, 0.1]],
   [1.0, [2.4, 1.45, 3.0, 1.05, 0.7]],
 ];
 
-const desired = new THREE.Vector3();
-const target = new THREE.Vector3();
+const figure = new THREE.Vector3();
+const desiredOffset = new THREE.Vector3();
+const desiredLook = new THREE.Vector3();
+const lookAt = new THREE.Vector3();
 
 export default function CameraRig() {
-  const current = useRef(new THREE.Vector3(5.4, 151.6, 6.8));
-  const lookAt = useRef(new THREE.Vector3(0, 151, 0));
+  const offset = useRef(new THREE.Vector3(5.4, 1.6, 6.8));
+  const look = useRef(new THREE.Vector3(0, 1.0, 0));
 
   useFrame(({ camera }, delta) => {
     const p = scroll.p;
     const { a, b, t } = sample(CAMERA_TRACK, p);
-    const offset = a.map((v, i) => mix(v, b[i], t));
 
-    const figureX = drift(p);
-    const figureY = altitude(p);
+    figure.set(drift(p), altitude(p), 0);
+    desiredOffset.set(mix(a[0], b[0], t), mix(a[1], b[1], t), mix(a[2], b[2], t));
+    desiredLook.set(0, mix(a[3], b[3], t), mix(a[4], b[4], t));
 
-    desired.set(figureX + offset[0], figureY + offset[1], offset[2]);
-    desired.y = Math.max(desired.y, 0.55);
-    target.set(figureX * 0.5, figureY + offset[3], offset[4]);
+    const k = 1 - Math.pow(0.0008, delta);
+    offset.current.lerp(desiredOffset, k);
+    look.current.lerp(desiredLook, k);
 
-    const k = 1 - Math.pow(0.001, delta);
-    current.current.lerp(desired, k);
-    lookAt.current.lerp(target, k);
-
-    camera.position.copy(current.current);
-    camera.lookAt(lookAt.current);
+    camera.position.copy(figure).add(offset.current);
+    camera.position.y = Math.max(camera.position.y, 0.55);
+    lookAt.copy(figure).add(look.current);
+    camera.lookAt(lookAt);
   });
 
   return null;
