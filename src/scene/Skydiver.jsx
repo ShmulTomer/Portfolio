@@ -80,6 +80,8 @@ export default function Skydiver() {
       if (!bone) continue;
       va.fromArray(pose, BONES[i][0] * 3);
       vb.fromArray(pose, BONES[i][1] * 3);
+      const fraction = BONES[i][2];
+      if (fraction !== 1) vb.lerpVectors(va, vb, fraction);
       dir.subVectors(vb, va);
       const length = dir.length() || 0.0001;
       mid.addVectors(va, vb).multiplyScalar(0.5);

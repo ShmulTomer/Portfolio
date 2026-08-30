@@ -40,8 +40,11 @@ export const JOINT_RADIUS = {
 
 const idx = Object.fromEntries(JOINT_NAMES.map((n, i) => [n, i]));
 
+// An optional third entry draws only that fraction of the bone, measured from
+// the first joint. The neck sits inside the head sphere in most poses, so a
+// full-length neck/head bone would be drawn buried in the head.
 export const BONES = [
-  ["head", "neck"],
+  ["neck", "head", 0.6],
   ["neck", "chest"],
   ["chest", "pelvis"],
   ["neck", "shoulderL"],
@@ -58,7 +61,7 @@ export const BONES = [
   ["kneeL", "footL"],
   ["hipR", "kneeR"],
   ["kneeR", "footR"],
-].map(([a, b]) => [idx[a], idx[b]]);
+].map(([a, b, fraction = 1]) => [idx[a], idx[b], fraction]);
 
 export const JOINT_INDEX = idx;
 
