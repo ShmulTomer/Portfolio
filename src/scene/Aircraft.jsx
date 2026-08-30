@@ -243,12 +243,6 @@ export default function Aircraft() {
       <Strut from={[-3.7, -0.42, 0]} to={[-3.86, -1.15, 0]} radius={0.05} />
       <Wheel position={[-3.86, -1.15, 0]} radius={0.17} tube={0.06} />
 
-      {/* cabin floor */}
-      <mesh position={[-2.6, -0.44, 0]}>
-        <boxGeometry args={[2.4, 0.03, 1.25]} />
-        <meshBasicMaterial wireframe color={DIM} />
-      </mesh>
-
       {/* instrument panel, then the yoke on its shaft out in front of him */}
       <mesh position={[-3.4, 0.24, 0]}>
         <boxGeometry args={[0.12, 0.56, 1.16]} />

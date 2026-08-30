@@ -1,5 +1,5 @@
 export const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
-export const seg = (p, a, b) => clamp((p - a) / (b - a));
+export const seg = (p, a, b) => (a === b ? (p >= b ? 1 : 0) : clamp((p - a) / (b - a)));
 export const smooth = (t) => t * t * (3 - 2 * t);
 export const mix = (a, b, t) => a + (b - a) * t;
 

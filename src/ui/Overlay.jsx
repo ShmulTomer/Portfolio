@@ -6,7 +6,7 @@ const PANELS = {
   hero: [0, 0, 0.05, 0.1],
   beyond: [0.17, 0.21, 0.34, 0.39],
   education: [0.55, 0.59, 0.72, 0.77],
-  experience: [0.9, 0.945, 1.0, 1.0],
+  experience: [0.9, 0.945, Infinity, Infinity],
 };
 
 export default function Overlay() {

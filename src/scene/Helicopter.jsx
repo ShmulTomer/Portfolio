@@ -238,12 +238,6 @@ export default function Helicopter() {
         </group>
       ))}
 
-      {/* cabin floor */}
-      <mesh position={[-2.5, -0.74, 0]}>
-        <boxGeometry args={[1.5, 0.03, 1.3]} />
-        <meshBasicMaterial wireframe color={DIM} />
-      </mesh>
-
       {/* instrument console, which on an R22 sits centred between the seats */}
       <mesh position={[-3.16, -0.16, 0]} rotation={[0, 0, 0.22]}>
         <boxGeometry args={[0.16, 0.5, 0.62]} />
