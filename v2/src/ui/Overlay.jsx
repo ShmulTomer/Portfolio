@@ -57,11 +57,15 @@ export default function Overlay() {
         <p className="eyebrow">In the air</p>
         <ul className="list">
           <li>
-            <span>Licensed Pilot</span>
-            <em>Airplane &amp; Helicopter PPL</em>
+            <span>Airplane Pilot License</span>
+            <em>FAA Private Pilot &middot; Single-Engine Land</em>
           </li>
           <li>
-            <span>Licensed Skydiver</span>
+            <span>Helicopter Pilot License</span>
+            <em>FAA Private Pilot &middot; Rotorcraft</em>
+          </li>
+          <li>
+            <span>Skydiving License</span>
             <em>USPA A License</em>
           </li>
         </ul>
