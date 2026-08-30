@@ -17,11 +17,13 @@ export const JOINT_NAMES = [
   "footR",
 ];
 
+// Joints with no radius still drive the skeleton, they just aren't drawn.
+// The torso reads as an outline of bones rather than a mass of spheres.
 export const JOINT_RADIUS = {
   head: 0.21,
   neck: 0.07,
-  chest: 0.17,
-  pelvis: 0.14,
+  chest: 0,
+  pelvis: 0,
   shoulderL: 0.085,
   shoulderR: 0.085,
   elbowL: 0.065,
@@ -57,6 +59,8 @@ export const BONES = [
   ["hipR", "kneeR"],
   ["kneeR", "footR"],
 ].map(([a, b]) => [idx[a], idx[b]]);
+
+export const JOINT_INDEX = idx;
 
 const POSE_SOURCE = {
   // Left seat, hands on the yoke, feet up on the rudder pedals.
@@ -143,10 +147,10 @@ const POSE_SOURCE = {
     pelvis: [0, 0.85, 0],
     shoulderL: [-0.3, 1.36, 0],
     shoulderR: [0.3, 1.36, 0],
-    elbowL: [-0.4, 1.58, 0.04],
-    elbowR: [0.4, 1.58, 0.04],
-    handL: [-0.44, 1.9, 0.06],
-    handR: [0.44, 1.9, 0.06],
+    elbowL: [-0.37, 1.56, 0.04],
+    elbowR: [0.37, 1.56, 0.04],
+    handL: [-0.31, 1.89, 0.01],
+    handR: [0.31, 1.89, 0.01],
     hipL: [-0.17, 0.82, 0],
     hipR: [0.17, 0.82, 0],
     kneeL: [-0.16, 0.44, 0.12],

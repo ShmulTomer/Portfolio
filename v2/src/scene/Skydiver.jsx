@@ -1,7 +1,7 @@
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { BONES, JOINT_NAMES, JOINT_RADIUS, POSES } from "../lib/skeleton";
+import { BONES, JOINT_INDEX, JOINT_NAMES, JOINT_RADIUS, POSES } from "../lib/skeleton";
 import { scroll } from "../lib/scroll";
 import {
   PITCH_TRACK,
@@ -23,29 +23,34 @@ const mid = new THREE.Vector3();
 // Joints that flutter in the airstream during freefall.
 const FLUTTER = { handL: 1, handR: 1, footL: 0.8, footR: 0.8, kneeL: 0.4, kneeR: 0.4 };
 
-function useCanopyLines() {
-  return useMemo(() => {
-    const points = [];
-    const riserL = new THREE.Vector3(-0.32, 1.62, 0);
-    const riserR = new THREE.Vector3(0.32, 1.62, 0);
-    for (let i = 0; i < 10; i++) {
-      const u = i / 9 - 0.5;
-      const side = i < 5 ? riserL : riserR;
-      points.push(new THREE.Vector3(u * 4.4, 3.28, ((i % 5) - 2) * 0.42));
-      points.push(side);
-    }
-    return new THREE.BufferGeometry().setFromPoints(points);
-  }, []);
-}
+// Canopy rim, in the canopy's own unscaled space.
+const RIM_Y = 3.3;
+const RIM_X = 2.4;
+const RIM_Z = 1.15;
+// Where each suspension line meets the fabric, as angles around the rim.
+const LINE_ANGLES = [100, 128, 156, 204, 232, 260].map((d) => (d * Math.PI) / 180);
+const LINES_PER_SIDE = LINE_ANGLES.length + 1; // canopy lines plus one riser
+const LINE_COUNT = LINES_PER_SIDE * 2;
+
+// Risers rise from the shoulders to a confluence just above them, which is also
+// where the hands grip in the hang pose.
+const RISER_LIFT = 0.52;
 
 export default function Skydiver() {
   const root = useRef();
   const body = useRef();
   const canopy = useRef();
+  const lines = useRef();
   const jointRefs = useRef([]);
   const boneRefs = useRef([]);
   const pose = useMemo(() => new Float32Array(JOINT_NAMES.length * 3), []);
-  const lineGeo = useCanopyLines();
+
+  const lineGeometry = useMemo(() => {
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(LINE_COUNT * 2 * 3);
+    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    return geometry;
+  }, []);
 
   useFrame((state) => {
     const p = scroll.p;
@@ -71,9 +76,8 @@ export default function Skydiver() {
     for (let i = 0; i < BONES.length; i++) {
       const bone = boneRefs.current[i];
       if (!bone) continue;
-      const [ia, ib] = BONES[i];
-      va.fromArray(pose, ia * 3);
-      vb.fromArray(pose, ib * 3);
+      va.fromArray(pose, BONES[i][0] * 3);
+      vb.fromArray(pose, BONES[i][1] * 3);
       dir.subVectors(vb, va);
       const length = dir.length() || 0.0001;
       mid.addVectors(va, vb).multiplyScalar(0.5);
@@ -82,43 +86,91 @@ export default function Skydiver() {
       bone.scale.set(1, length, 1);
     }
 
-    const pos = figurePosition(p);
-    root.current.position.set(pos.x, pos.y, pos.z);
+    const position = figurePosition(p);
+    root.current.position.set(position.x, position.y, position.z);
     const spin = Math.sin(p * 7.5) * 0.4 * seg(p, 0.15, 0.26) * (1 - seg(p, 0.55, 0.85));
     root.current.rotation.y = sampleNumber(YAW_TRACK, p) + spin;
-    body.current.rotation.x = sampleNumber(PITCH_TRACK, p);
+    const pitch = sampleNumber(PITCH_TRACK, p);
+    body.current.rotation.x = pitch;
 
     const s = canopyScale(p);
+    const sway = Math.sin(time * 0.9) * 0.05 * s;
     canopy.current.visible = s > 0.001;
+    lines.current.visible = s > 0.001;
     canopy.current.scale.setScalar(s);
-    canopy.current.rotation.z = Math.sin(time * 0.9) * 0.05 * s;
+    canopy.current.rotation.z = sway;
+
+    if (s > 0.001) {
+      const array = lineGeometry.attributes.position.array;
+      const cos = Math.cos(pitch);
+      const sin = Math.sin(pitch);
+      const cosZ = Math.cos(sway);
+      const sinZ = Math.sin(sway);
+      let n = 0;
+
+      for (const side of [-1, 1]) {
+        const shoulder = JOINT_INDEX[side < 0 ? "shoulderL" : "shoulderR"] * 3;
+        const sx = pose[shoulder];
+        const sy = pose[shoulder + 1];
+        const sz = pose[shoulder + 2];
+        // The shoulder and the riser top both live in body space, so undo the
+        // body pitch to bring them into the upright frame the canopy hangs in.
+        const shoulderY = sy * cos - sz * sin;
+        const shoulderZ = sy * sin + sz * cos;
+        const riserY = (sy + RISER_LIFT) * cos - sz * sin;
+        const riserZ = (sy + RISER_LIFT) * sin + sz * cos;
+
+        array[n++] = sx;
+        array[n++] = shoulderY;
+        array[n++] = shoulderZ;
+        array[n++] = sx;
+        array[n++] = riserY;
+        array[n++] = riserZ;
+
+        for (const angle of LINE_ANGLES) {
+          const rx = Math.cos(angle) * RIM_X * s * -side;
+          const ry = RIM_Y * s;
+          const rz = Math.sin(angle) * RIM_Z * s;
+          array[n++] = sx;
+          array[n++] = riserY;
+          array[n++] = riserZ;
+          array[n++] = rx * cosZ - ry * sinZ;
+          array[n++] = rx * sinZ + ry * cosZ;
+          array[n++] = rz;
+        }
+      }
+      lineGeometry.attributes.position.needsUpdate = true;
+    }
   });
 
   return (
     <group ref={root}>
       <group ref={body}>
-        {JOINT_NAMES.map((name, i) => (
-          <mesh key={name} ref={(el) => (jointRefs.current[i] = el)}>
-            <sphereGeometry args={[JOINT_RADIUS[name], 11, 7]} />
-            <meshBasicMaterial wireframe color="#ffffff" />
-          </mesh>
-        ))}
+        {JOINT_NAMES.map((name, i) =>
+          JOINT_RADIUS[name] ? (
+            <mesh key={name} ref={(el) => (jointRefs.current[i] = el)}>
+              <sphereGeometry args={[JOINT_RADIUS[name], 11, 7]} />
+              <meshBasicMaterial wireframe color="#ffffff" />
+            </mesh>
+          ) : null
+        )}
         {BONES.map((_, i) => (
-          <mesh key={i} ref={(el) => (boneRefs.current[i] = el)}>
+          <mesh key={`bone${i}`} ref={(el) => (boneRefs.current[i] = el)}>
             <cylinderGeometry args={[0.022, 0.022, 1, 5, 1, true]} />
             <meshBasicMaterial wireframe color="#e6e9ef" />
           </mesh>
         ))}
       </group>
 
+      <lineSegments ref={lines} geometry={lineGeometry} visible={false} frustumCulled={false}>
+        <lineBasicMaterial color="#9aa3b4" transparent opacity={0.7} />
+      </lineSegments>
+
       <group ref={canopy} visible={false}>
-        <mesh position={[0, 3.3, 0]} scale={[2.4, 0.82, 1.15]}>
-          <sphereGeometry args={[1, 20, 7, 0, Math.PI * 2, 0, Math.PI * 0.5]} />
+        <mesh position={[0, RIM_Y, 0]} scale={[RIM_X, 0.82, RIM_Z]}>
+          <sphereGeometry args={[1, 22, 8, 0, Math.PI * 2, 0, Math.PI * 0.5]} />
           <meshBasicMaterial wireframe color="#ffffff" transparent opacity={0.9} />
         </mesh>
-        <lineSegments geometry={lineGeo}>
-          <lineBasicMaterial color="#aab2c0" transparent opacity={0.55} />
-        </lineSegments>
       </group>
     </group>
   );
