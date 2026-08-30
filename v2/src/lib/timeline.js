@@ -45,9 +45,9 @@ export const POSE_TRACK = [
   [0.115, "door"],
   [0.17, "door"],
   [0.25, "freefall"],
-  [0.4, "freefall"],
-  [0.46, "deploy"],
-  [0.54, "hang"],
+  [0.39, "freefall"],
+  [0.43, "deploy"],
+  [0.53, "hang"],
   [0.8, "hang"],
   [0.88, "land"],
   [0.93, "land"],
@@ -61,9 +61,9 @@ export const PITCH_TRACK = [
   [0.13, 0.14],
   [0.17, 0.14],
   [0.25, 1.3],
-  [0.4, 1.38],
-  [0.46, 0.72],
-  [0.54, 0.12],
+  [0.39, 1.38],
+  [0.43, 0.72],
+  [0.53, 0.12],
   [0.8, 0.1],
   [0.88, 0.0],
   [1.0, 0.0],
@@ -79,27 +79,44 @@ export const YAW_TRACK = [
 export function altitude(p) {
   if (p < EXIT_P) return EXIT_ALTITUDE;
   // Freefall accelerates.
-  if (p < 0.42) {
-    const t = seg(p, EXIT_P, 0.42);
+  if (p < 0.44) {
+    const t = seg(p, EXIT_P, 0.44);
     return mix(EXIT_ALTITUDE, 62, t * t);
   }
-  // Canopy opening bites hard.
-  if (p < 0.52) {
-    const t = seg(p, 0.42, 0.52);
-    return mix(62, 53, 1 - (1 - t) * (1 - t));
+  // Inflation bites hard.
+  if (p < 0.55) {
+    const t = seg(p, 0.44, 0.55);
+    return mix(62, 52, 1 - (1 - t) * (1 - t));
   }
-  if (p < 0.86) return mix(53, 0.9, seg(p, 0.52, 0.86));
+  if (p < 0.86) return mix(52, 0.9, seg(p, 0.55, 0.86));
   if (p < 0.92) return mix(0.9, 0, smooth(seg(p, 0.86, 0.92)));
   return 0;
 }
 
-// Canopy inflation, with a little overshoot on opening and a collapse on landing.
-export function canopyScale(p) {
-  if (p < 0.43) return 0;
-  const open = seg(p, 0.43, 0.53);
-  const overshoot = 1 + 0.22 * Math.sin(open * Math.PI);
-  const collapse = 1 - seg(p, 0.87, 0.93);
-  return smooth(open) * overshoot * collapse;
+const _canopy = { lift: 0, span: 0, back: 0, opacity: 0, out: false };
+
+// Deployment happens on two axes rather than one uniform scale: the lines
+// stretch first, carrying a narrow streamer up off his back, and only then does
+// the canopy inflate spanwise. On touchdown it stops flying, drops behind him
+// and spreads flat on the ground instead of shrinking into nothing.
+export function canopyState(p, out = _canopy) {
+  const opacity = 1 - seg(p, 0.93, 0.985);
+  if (p < 0.43 || opacity <= 0.01) {
+    out.out = false;
+    out.opacity = 0;
+    return out;
+  }
+  const stretch = smooth(seg(p, 0.43, 0.475));
+  const inflate = smooth(seg(p, 0.465, 0.55));
+  const settle = smooth(seg(p, 0.88, 0.95));
+  const overshoot = 1 + 0.16 * Math.sin(inflate * Math.PI);
+
+  out.lift = mix(stretch, 0.06, settle);
+  out.span = (stretch * 0.07 + inflate * 0.93) * overshoot * mix(1, 1.15, settle);
+  out.back = -settle * 2.8;
+  out.opacity = opacity;
+  out.out = true;
+  return out;
 }
 
 // Gentle lateral drift under canopy, damped to zero by touchdown.

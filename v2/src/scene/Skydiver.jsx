@@ -7,7 +7,7 @@ import {
   PITCH_TRACK,
   POSE_TRACK,
   YAW_TRACK,
-  canopyScale,
+  canopyState,
   figurePosition,
   sample,
   sampleNumber,
@@ -41,6 +41,8 @@ export default function Skydiver() {
   const body = useRef();
   const canopy = useRef();
   const lines = useRef();
+  const canopyMaterial = useRef();
+  const lineMaterial = useRef();
   const jointRefs = useRef([]);
   const boneRefs = useRef([]);
   const pose = useMemo(() => new Float32Array(JOINT_NAMES.length * 3), []);
@@ -93,14 +95,18 @@ export default function Skydiver() {
     const pitch = sampleNumber(PITCH_TRACK, p);
     body.current.rotation.x = pitch;
 
-    const s = canopyScale(p);
-    const sway = Math.sin(time * 0.9) * 0.05 * s;
-    canopy.current.visible = s > 0.001;
-    lines.current.visible = s > 0.001;
-    canopy.current.scale.setScalar(s);
-    canopy.current.rotation.z = sway;
+    const chute = canopyState(p);
+    canopy.current.visible = chute.out;
+    lines.current.visible = chute.out;
 
-    if (s > 0.001) {
+    if (chute.out) {
+      const sway = Math.sin(time * 0.9) * 0.05 * chute.span * (1 - seg(p, 0.86, 0.92));
+      canopy.current.position.z = chute.back;
+      canopy.current.scale.set(chute.span, chute.lift, chute.span);
+      canopy.current.rotation.z = sway;
+      canopyMaterial.current.opacity = 0.9 * chute.opacity;
+      lineMaterial.current.opacity = 0.7 * chute.opacity;
+
       const array = lineGeometry.attributes.position.array;
       const cos = Math.cos(pitch);
       const sin = Math.sin(pitch);
@@ -128,15 +134,15 @@ export default function Skydiver() {
         array[n++] = riserZ;
 
         for (const angle of LINE_ANGLES) {
-          const rx = Math.cos(angle) * RIM_X * s * -side;
-          const ry = RIM_Y * s;
-          const rz = Math.sin(angle) * RIM_Z * s;
+          const rx = Math.cos(angle) * RIM_X * chute.span * -side;
+          const ry = RIM_Y * chute.lift;
+          const rz = Math.sin(angle) * RIM_Z * chute.span;
           array[n++] = sx;
           array[n++] = riserY;
           array[n++] = riserZ;
           array[n++] = rx * cosZ - ry * sinZ;
           array[n++] = rx * sinZ + ry * cosZ;
-          array[n++] = rz;
+          array[n++] = rz + chute.back;
         }
       }
       lineGeometry.attributes.position.needsUpdate = true;
@@ -163,13 +169,13 @@ export default function Skydiver() {
       </group>
 
       <lineSegments ref={lines} geometry={lineGeometry} visible={false} frustumCulled={false}>
-        <lineBasicMaterial color="#9aa3b4" transparent opacity={0.7} />
+        <lineBasicMaterial ref={lineMaterial} color="#9aa3b4" transparent opacity={0.7} />
       </lineSegments>
 
       <group ref={canopy} visible={false}>
         <mesh position={[0, RIM_Y, 0]} scale={[RIM_X, 0.82, RIM_Z]}>
           <sphereGeometry args={[1, 22, 8, 0, Math.PI * 2, 0, Math.PI * 0.5]} />
-          <meshBasicMaterial wireframe color="#ffffff" transparent opacity={0.9} />
+          <meshBasicMaterial ref={canopyMaterial} wireframe color="#ffffff" transparent opacity={0.9} />
         </mesh>
       </group>
     </group>
