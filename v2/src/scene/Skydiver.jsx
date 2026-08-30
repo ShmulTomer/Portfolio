@@ -155,21 +155,21 @@ export default function Skydiver() {
         {JOINT_NAMES.map((name, i) =>
           JOINT_RADIUS[name] ? (
             <mesh key={name} ref={(el) => (jointRefs.current[i] = el)}>
-              <sphereGeometry args={[JOINT_RADIUS[name], 11, 7]} />
-              <meshBasicMaterial wireframe color="#ffffff" />
+              <sphereGeometry args={[JOINT_RADIUS[name], 16, 12]} />
+              <meshBasicMaterial color="#ffffff" transparent opacity={0.8} />
             </mesh>
           ) : null
         )}
         {BONES.map((_, i) => (
           <mesh key={`bone${i}`} ref={(el) => (boneRefs.current[i] = el)}>
-            <cylinderGeometry args={[0.022, 0.022, 1, 5, 1, true]} />
-            <meshBasicMaterial wireframe color="#e6e9ef" />
+            <cylinderGeometry args={[0.024, 0.024, 1, 6, 1, true]} />
+            <meshBasicMaterial color="#e6e9ef" transparent opacity={0.8} />
           </mesh>
         ))}
       </group>
 
       <lineSegments ref={lines} geometry={lineGeometry} visible={false} frustumCulled={false}>
-        <lineBasicMaterial ref={lineMaterial} color="#9aa3b4" transparent opacity={0.7} />
+        <lineBasicMaterial ref={lineMaterial} color="#9aa3b4" transparent opacity={0.8} />
       </lineSegments>
 
       <group ref={canopy} visible={false}>
