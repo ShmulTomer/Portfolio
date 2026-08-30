@@ -49,13 +49,12 @@ export default function Overlay() {
       <section className="panel panel-hero" ref={set("hero")}>
         <p className="eyebrow">Georgia Tech &middot; New York</p>
         <h1>Tomer Shmul</h1>
-        <p className="lede">Software Engineer at Citadel</p>
+        <p className="lede">Quantitative Developer at Citadel</p>
         <p className="hint">scroll to jump</p>
       </section>
 
       <section className="panel panel-left" ref={set("beyond")}>
-        <p className="eyebrow">Beyond the desk</p>
-        <h2>I jump out of the plane I could be flying.</h2>
+        <p className="eyebrow">In the air</p>
         <ul className="list">
           <li>
             <span>Licensed Pilot</span>
@@ -92,7 +91,7 @@ export default function Overlay() {
         <ul className="list">
           <li>
             <span>Citadel &middot; 2025&ndash;present</span>
-            <em>Software Engineer, EQR Platform Engineering</em>
+            <em>Quantitative Developer, EQR Platform Engineering</em>
           </li>
           <li>
             <span>Citadel &middot; 2024</span>
