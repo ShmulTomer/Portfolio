@@ -59,6 +59,25 @@ export const BONES = [
 ].map(([a, b]) => [idx[a], idx[b]]);
 
 const POSE_SOURCE = {
+  // Left seat, hands on the yoke, feet up on the rudder pedals.
+  pilot: {
+    head: [0, 1.44, 0.03],
+    neck: [0, 1.26, -0.02],
+    chest: [0, 1.0, -0.05],
+    pelvis: [0, 0.67, -0.12],
+    shoulderL: [-0.29, 1.2, -0.04],
+    shoulderR: [0.29, 1.2, -0.04],
+    elbowL: [-0.37, 0.96, 0.1],
+    elbowR: [0.37, 0.96, 0.1],
+    handL: [-0.21, 1.02, 0.38],
+    handR: [0.21, 1.02, 0.38],
+    hipL: [-0.17, 0.65, -0.12],
+    hipR: [0.17, 0.65, -0.12],
+    kneeL: [-0.18, 0.62, 0.3],
+    kneeR: [0.18, 0.62, 0.3],
+    footL: [-0.18, 0.3, 0.52],
+    footR: [0.18, 0.3, 0.52],
+  },
   // Crouched in the doorway, hands on the frame.
   door: {
     head: [0, 1.58, 0.06],

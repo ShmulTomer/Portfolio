@@ -32,7 +32,7 @@ export default function App() {
       <div className="stage">
         <Canvas
           dpr={[1, 2]}
-          camera={{ fov: 42, near: 0.1, far: 800, position: [5.4, 151.6, 6.8] }}
+          camera={{ fov: 42, near: 0.1, far: 800, position: [1.7, 151.5, 7.52] }}
           onCreated={({ scene }) => {
             scene.background = new THREE.Color("#08090c");
             scene.fog = new THREE.Fog("#08090c", 16, 120);

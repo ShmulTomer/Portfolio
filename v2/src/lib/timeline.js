@@ -4,6 +4,18 @@ export const smooth = (t) => t * t * (3 - 2 * t);
 export const mix = (a, b, t) => a + (b - a) * t;
 
 export const EXIT_ALTITUDE = 150;
+export const EXIT_P = 0.13;
+
+// Aircraft-local landmarks. The base is chosen so the door sits exactly at the
+// world origin column at exit, which keeps the handoff to freefall continuous.
+// He goes out of his own door, so the seat and the doorway are the same station.
+export const COCKPIT_LOCAL = [-2.6, -0.7, 0.34];
+export const DOOR_LOCAL = [-2.5, -0.7, 0.62];
+export const AIRCRAFT_BASE = [
+  -DOOR_LOCAL[0],
+  EXIT_ALTITUDE - DOOR_LOCAL[1],
+  -DOOR_LOCAL[2],
+];
 
 // Sample a keyframe track of [position, value] pairs. Returns the two
 // neighbouring frames plus a smoothed blend factor between them.
@@ -28,8 +40,10 @@ export function sampleNumber(track, p) {
 
 // Which pose the figure holds, and when.
 export const POSE_TRACK = [
-  [0.0, "door"],
-  [0.13, "door"],
+  [0.0, "pilot"],
+  [0.06, "pilot"],
+  [0.115, "door"],
+  [0.17, "door"],
   [0.25, "freefall"],
   [0.4, "freefall"],
   [0.46, "deploy"],
@@ -42,8 +56,10 @@ export const POSE_TRACK = [
 
 // Body pitch in radians. Positive rolls the figure belly-to-earth.
 export const PITCH_TRACK = [
-  [0.0, 0.14],
+  [0.0, 0.0],
+  [0.06, 0.0],
   [0.13, 0.14],
+  [0.17, 0.14],
   [0.25, 1.3],
   [0.4, 1.38],
   [0.46, 0.72],
@@ -53,11 +69,18 @@ export const PITCH_TRACK = [
   [1.0, 0.0],
 ];
 
+// Heading. Faces the nose while flying, then turns square to the open door.
+export const YAW_TRACK = [
+  [0.0, -Math.PI / 2],
+  [0.06, -Math.PI / 2],
+  [0.13, 0.0],
+];
+
 export function altitude(p) {
-  if (p < 0.13) return EXIT_ALTITUDE;
+  if (p < EXIT_P) return EXIT_ALTITUDE;
   // Freefall accelerates.
   if (p < 0.42) {
-    const t = seg(p, 0.13, 0.42);
+    const t = seg(p, EXIT_P, 0.42);
     return mix(EXIT_ALTITUDE, 62, t * t);
   }
   // Canopy opening bites hard.
@@ -84,4 +107,30 @@ export function drift(p) {
   const under = seg(p, 0.5, 0.9);
   const damp = 1 - smooth(under);
   return Math.sin(p * 18) * 1.5 * damp * smooth(seg(p, 0.42, 0.56));
+}
+
+const _aircraft = { x: 0, y: 0, z: 0 };
+const _figure = { x: 0, y: 0, z: 0 };
+
+export function aircraftPosition(p, out = _aircraft) {
+  const away = seg(p, EXIT_P, 0.55);
+  out.x = AIRCRAFT_BASE[0] + away * away * 170;
+  out.y = AIRCRAFT_BASE[1] + away * 14;
+  out.z = AIRCRAFT_BASE[2] - away * away * 45;
+  return out;
+}
+
+export function figurePosition(p, out = _figure) {
+  if (p >= EXIT_P) {
+    out.x = drift(p);
+    out.y = altitude(p);
+    out.z = 0;
+    return out;
+  }
+  const plane = aircraftPosition(p, _aircraft);
+  const t = smooth(seg(p, 0.06, EXIT_P));
+  out.x = plane.x + mix(COCKPIT_LOCAL[0], DOOR_LOCAL[0], t);
+  out.y = plane.y + mix(COCKPIT_LOCAL[1], DOOR_LOCAL[1], t);
+  out.z = plane.z + mix(COCKPIT_LOCAL[2], DOOR_LOCAL[2], t);
+  return out;
 }

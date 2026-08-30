@@ -6,9 +6,9 @@ import { scroll } from "../lib/scroll";
 import {
   PITCH_TRACK,
   POSE_TRACK,
-  altitude,
+  YAW_TRACK,
   canopyScale,
-  drift,
+  figurePosition,
   sample,
   sampleNumber,
   seg,
@@ -82,8 +82,10 @@ export default function Skydiver() {
       bone.scale.set(1, length, 1);
     }
 
-    root.current.position.set(drift(p), altitude(p), 0);
-    root.current.rotation.y = Math.sin(p * 7.5) * 0.4 * (1 - seg(p, 0.55, 0.85));
+    const pos = figurePosition(p);
+    root.current.position.set(pos.x, pos.y, pos.z);
+    const spin = Math.sin(p * 7.5) * 0.4 * seg(p, 0.15, 0.26) * (1 - seg(p, 0.55, 0.85));
+    root.current.rotation.y = sampleNumber(YAW_TRACK, p) + spin;
     body.current.rotation.x = sampleNumber(PITCH_TRACK, p);
 
     const s = canopyScale(p);
